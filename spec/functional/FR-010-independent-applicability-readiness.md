@@ -3,13 +3,13 @@ id: FR-010
 title: "Keep applicability and readiness independent"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/US-003"
+  - target: "ix://agent-ix/filament-verification/US-003"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-004"
+  - target: "ix://agent-ix/filament-verification/FR-004"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "depends_on"
 ---
 # FR-010: Keep applicability and readiness independent

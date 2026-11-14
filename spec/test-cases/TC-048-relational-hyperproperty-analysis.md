@@ -3,9 +3,9 @@ id: TC-048
 title: "Relational and finite-trace hyperproperty analysis"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-030"
+  - target: "ix://agent-ix/filament-verification/FR-030"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-009"
+  - target: "ix://agent-ix/filament-verification/NFR-009"
     type: "verifies"
 ---
 # TC-048: Relational and finite-trace hyperproperty analysis

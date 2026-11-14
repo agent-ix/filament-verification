@@ -10,10 +10,10 @@ type: interface
 ```yaml
 name: QualificationEvidenceAuthority
 contract_versions:
-  ecosystem_lock: quire.ecosystem-lock/v1
-  conformance_corpus: quire.conformance-corpus/v1
-  evidence_intake: quire.evidence-intake/v1
-  human_decision: quire.human-decision/v1
+  ecosystem_lock: filament.ecosystem-lock/v1
+  conformance_corpus: filament.conformance-corpus/v1
+  evidence_intake: filament.evidence-intake/v1
+  human_decision: filament.human-decision/v1
 associated_types:
   - EcosystemLock
   - ConformanceCorpus
@@ -40,7 +40,7 @@ operations:
     output: immutable HumanDecision or typed refusal
     semantics: records eventual acceptance without making production ceremony a prerequisite for development execution
 ownership:
-  producer: quire-verification emits validated immutable records
+  producer: filament-verification emits validated immutable records
   retention_and_sufficiency: Quoin
   integrated_execution: a cross-lane campaign outside this repository
   decision: authenticated human or explicitly authorized workflow

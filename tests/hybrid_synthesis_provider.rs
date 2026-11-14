@@ -3,14 +3,14 @@
 
 #![allow(missing_docs)]
 
-use ix_trace_rs::trace;
-use quire_verification::hybrid_synthesis_provider::{
+use filament_verification::hybrid_synthesis_provider::{
     ANALYZE_METHOD_RESULT_VERSION, AnalyzeAssumptionsIdentity, AnalyzeBoundsIdentity,
     AnalyzeContentIdentity, AnalyzeImplementationIdentity, AnalyzeMethod, AnalyzeOptionsIdentity,
     AnalyzeOutcome, AnalyzeRequestIdentity, AnalyzeResult, AnalyzeResultIdentity,
     AnalyzeRunIdentity, AnalyzeSubjectIdentity, AnalyzeToolchainIdentity, ProviderConsumption,
     ProviderRevision, consume_analyze_result,
 };
+use ix_trace_rs::trace;
 
 fn result(method: AnalyzeMethod, outcome: AnalyzeOutcome) -> AnalyzeResult {
     AnalyzeResult {
@@ -77,7 +77,7 @@ fn it_005_sc_04_retains_nonconclusions_and_refuses_malformed_results() {
         ProviderConsumption::Refused
     );
     let mut wrong_contract = result(AnalyzeMethod::HybridReachability, AnalyzeOutcome::Enclosure);
-    wrong_contract.contract_version = "quire.method-result/v0".into();
+    wrong_contract.contract_version = "filament.method-result/v0".into();
     assert_eq!(
         consume_analyze_result(&wrong_contract),
         ProviderConsumption::Refused

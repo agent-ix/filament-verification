@@ -3,9 +3,9 @@ id: TC-024
 title: "Keep applicability readiness and classification independent"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-010"
+  - target: "ix://agent-ix/filament-verification/FR-010"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-011"
+  - target: "ix://agent-ix/filament-verification/FR-011"
     type: "verifies"
 ---
 # TC-024: Keep applicability readiness and classification independent

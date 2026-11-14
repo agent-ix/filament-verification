@@ -3,7 +3,7 @@ id: TC-019
 title: "Return violated and failed portfolio results"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "verifies"
 ---
 # TC-019: Return violated and failed portfolio results

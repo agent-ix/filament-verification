@@ -1,4 +1,4 @@
-# quire-verification
+# filament-verification
 
 ## Hash / digest / pin antipattern: present, slated for removal
 

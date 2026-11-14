@@ -5,11 +5,11 @@
 
 mod support;
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::{VerificationErrorCode, jcs_sha256};
-use quire_verification::qualification_technique::{
+use filament_verification::contracts::{VerificationErrorCode, jcs_sha256};
+use filament_verification::qualification_technique::{
     QualificationTechniqueOutcome, plan_qualification_case, qualify_technique_manifest,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use support::qualification_technique::fixture_with;
 use support::qualification_technique::{fixture, native_gapped_fixture, proofs, reference};
@@ -17,7 +17,7 @@ use support::qualification_technique::{fixture, native_gapped_fixture, proofs, r
 fn technique_proofs(
     manifest: &Value,
     catalog: &Value,
-) -> Vec<quire_verification::shared_reference::ValidatedSharedReference> {
+) -> Vec<filament_verification::shared_reference::ValidatedSharedReference> {
     let mut proof = proofs(manifest);
     proof.extend(proofs(catalog));
     proof
@@ -26,7 +26,7 @@ fn technique_proofs(
 fn freeze(
     candidate: Value,
     fixture: &support::qualification_technique::TechniqueFixture,
-) -> Result<QualificationTechniqueOutcome, quire_verification::contracts::VerificationError> {
+) -> Result<QualificationTechniqueOutcome, filament_verification::contracts::VerificationError> {
     let proof = technique_proofs(&candidate, &fixture.catalog);
     qualify_technique_manifest(
         candidate,

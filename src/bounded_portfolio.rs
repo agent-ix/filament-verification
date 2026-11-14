@@ -21,9 +21,9 @@ use crate::shared_reference::{
 };
 use crate::value::{arrays_field, field, string_field};
 
-const PROFILE: &str = "quire-verification/local-catalog-portfolio-v1";
+const PROFILE: &str = "filament-verification/local-catalog-portfolio-v1";
 const PLAN_ID: &str = "PLAN-LOCAL-CATALOG-PORTFOLIO";
-const PRODUCER: &str = "quire-verification-local-portfolio";
+const PRODUCER: &str = "filament-verification-local-portfolio";
 const ADAPTER: &str = "native-rust";
 const SELECTIONS: [(&str, &str, &str); 3] = [
     ("LOCAL-CATALOG-PARITY", "unit-testing", "required"),
@@ -84,7 +84,7 @@ where
         &evidence_references,
     )?;
     Ok(json!({
-        "schemaVersion": "quire-verification/local-portfolio-report/v1",
+        "schemaVersion": "filament-verification/local-portfolio-report/v1",
         "claimLimit": "Actual local adapter checks only; no external method, parser, fault, or human review is claimed.",
         "sourceRevision": source_revision, "producedAt": produced_at,
         "setupEffort": {"kind": "one-time", "measuredSeparatelyIn": "docs/evaluation-report.md"},
@@ -125,9 +125,9 @@ fn artifact_ref(kind: &str, identity: &str, revision: &str) -> Value {
         "value": {
             "refVersion": "ix.artifact-ref/3-draft",
             "kind": kind,
-            "authority": "github.com/agent-ix/quire-verification",
+            "authority": "github.com/agent-ix/filament-verification",
             "identity": identity,
-            "revision": {"namespace": "quire-verification", "value": revision},
+            "revision": {"namespace": "filament-verification", "value": revision},
             "digest": format!("sha256:{:x}", Sha256::digest(identity.as_bytes())),
             "wire": {"identity": PROFILE, "version": "1"},
         },
@@ -138,7 +138,11 @@ fn build_properties(
     source_revision: &str,
     source_digest: &str,
 ) -> Result<(Vec<Value>, Value), VerificationError> {
-    let subject_ref = artifact_ref("source", "repository:quire-verification", source_revision);
+    let subject_ref = artifact_ref(
+        "source",
+        "repository:filament-verification",
+        source_revision,
+    );
     let run_ref = artifact_ref(
         "run-artifact",
         "run:local-catalog-portfolio",
@@ -149,7 +153,7 @@ fn build_properties(
             "propertyId": property_id, "propertyRef": artifact_ref("property", property_ref, source_revision),
             "subjectRefs": [subject_ref], "profile": PROFILE, "bindingRefs": binding_refs,
             "dependencyClosure": source_digest,
-            "executionScope": {"repository": "agent-ix/quire-verification", "revision": source_revision, "paths": ["src/catalog.rs", "fixtures/quoin-catalog-export.json"]},
+            "executionScope": {"repository": "agent-ix/filament-verification", "revision": source_revision, "paths": ["src/catalog.rs", "fixtures/quoin-catalog-export.json"]},
             "freshness": {"maxAgeSeconds": 2_592_000}, "input": input,
         })
     };
@@ -300,9 +304,9 @@ fn validate_portfolio_artifact_envelopes(
         let expectation = ArtifactExpectation {
             ref_version: "ix.artifact-ref/3-draft".to_owned(),
             kind: string_field(value, "kind", "portfolio artifact")?.to_owned(),
-            authority: "github.com/agent-ix/quire-verification".to_owned(),
+            authority: "github.com/agent-ix/filament-verification".to_owned(),
             identity: identity.clone(),
-            revision_namespace: "quire-verification".to_owned(),
+            revision_namespace: "filament-verification".to_owned(),
             revision_value: string_field(revision, "value", "portfolio revision")?.to_owned(),
             digest: format!("sha256:{:x}", Sha256::digest(identity.as_bytes())),
             wire_identity: PROFILE.to_owned(),
@@ -492,7 +496,7 @@ fn capability(capability_id: &str, technique_id: &str, input_kind: &str, manual:
         "contractVersion": contract_version(), "kind": "ToolCapability", "capabilityId": capability_id, "techniqueId": technique_id,
         "qualification": "qualified", "inputKinds": [input_kind], "profiles": [PROFILE],
         "prerequisites": if manual { json!([{"kind": "reviewer", "id": "verification-owner", "required": true}]) } else { json!([]) },
-        "runner": {"kind": if manual { "manual" } else { "native-producer" }, "adapterId": if manual { "human-review-record" } else { "quire-verification-local-portfolio" }, "adapterVersion": "1"},
+        "runner": {"kind": if manual { "manual" } else { "native-producer" }, "adapterId": if manual { "human-review-record" } else { "filament-verification-local-portfolio" }, "adapterVersion": "1"},
         "environmentPermissions": if manual { json!([]) } else { json!(["read-repository-fixtures"]) },
         "nativeArtifactInterface": {"mode": "stdout-json", "mediaTypes": ["application/json"]}, "limits": {"subject": "catalog adapter at one source revision"},
     });

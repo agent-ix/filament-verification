@@ -3,9 +3,9 @@ id: TC-047
 title: "Model generation and domain-valid shrinking"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-029"
+  - target: "ix://agent-ix/filament-verification/FR-029"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-009"
+  - target: "ix://agent-ix/filament-verification/NFR-009"
     type: "verifies"
 ---
 # TC-047: Model generation and domain-valid shrinking

@@ -2,9 +2,9 @@
 
 //! Fuzz target for bounded public JSON ingestion.
 
+use filament_verification::contracts::parse_bounded_json;
 use ix_trace_rs::trace;
 use libfuzzer_sys::fuzz_target;
-use quire_verification::contracts::parse_bounded_json;
 
 /// The bounded public JSON reader refuses arbitrary bytes without panicking.
 ///

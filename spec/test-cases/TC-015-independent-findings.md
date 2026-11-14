@@ -3,11 +3,11 @@ id: TC-015
 title: "Retain all findings and assessment ownership fields"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-001"
+  - target: "ix://agent-ix/filament-verification/NFR-001"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-003"
+  - target: "ix://agent-ix/filament-verification/NFR-003"
     type: "verifies"
 ---
 # TC-015: Retain all findings and assessment ownership fields

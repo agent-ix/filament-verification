@@ -4,11 +4,11 @@ title: "Conservative assurance claims"
 type: NFR
 quality_attribute: functional_suitability
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-004"
+  - target: "ix://agent-ix/filament-verification/FR-004"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "constrains"
 ---
 # NFR-003: Conservative assurance claims

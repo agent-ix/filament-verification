@@ -5,16 +5,18 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::{VerificationErrorCode, wire};
-use quire_verification::evidence::assess_evidence;
-use quire_verification::fixtures::validate_fixture_result_references;
-use quire_verification::measurement::{measurement_observation, record_measurement_series};
-use quire_verification::report::{DispositionInput, assemble_portfolio_report as assemble_report};
-use quire_verification::shared_reference::{
+use filament_verification::contracts::{VerificationErrorCode, wire};
+use filament_verification::evidence::assess_evidence;
+use filament_verification::fixtures::validate_fixture_result_references;
+use filament_verification::measurement::{measurement_observation, record_measurement_series};
+use filament_verification::report::{
+    DispositionInput, assemble_portfolio_report as assemble_report,
+};
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
@@ -32,7 +34,7 @@ fn artifact_reference(kind: &str, identity: &str, wire: &str, bytes: &[u8]) -> V
         "value": {
             "refVersion": "ix.artifact-ref/3-draft",
             "kind": kind,
-            "authority": "github.com/agent-ix/quire-verification",
+            "authority": "github.com/agent-ix/filament-verification",
             "identity": identity,
             "revision": {"namespace": "vp04-test", "value": "1"},
             "digest": format!("sha256:{:x}", Sha256::digest(bytes)),
@@ -200,7 +202,7 @@ fn core(procedure: &Value) -> Value {
         .as_str()
         .expect("environment digest");
     json!({
-        "schemaVersion": "quire-verification.vp04-report-core/v1",
+        "schemaVersion": "filament-verification.vp04-report-core/v1",
         "reportId": "VP04-REPORT",
         "candidateRef": candidate_ref,
         "subjectRef": subject_ref,
@@ -215,12 +217,12 @@ fn core(procedure: &Value) -> Value {
         "assessment": assessment,
         "assessedAt": retained["producedAt"],
         "measurements": measurements(candidate_identity, environment_identity),
-        "interpretation": "These observations describe only the selected quire-spec revision and exact fixture pair.",
+        "interpretation": "These observations describe only the selected fsl revision and exact fixture pair.",
         "claimLimits": [
             "The run establishes only the declared parser syntax responses and format stability for these fixtures.",
             "Quoin retains ownership of evidence interpretation and sufficiency."
         ],
-        "producers": ["quire-spec-language", "quire-verification"],
+        "producers": ["filament-spec-language", "filament-verification"],
         "adapters": ["native-rust"],
         "evidenceOwner": "Quoin",
         "sufficiencyDecision": "not-made"
@@ -233,7 +235,7 @@ fn assemble_portfolio_report(
     validated_procedure: &ValidatedSharedReference,
     reviewer: &str,
     dispositions: &[DispositionInput<'_>],
-) -> Result<Value, quire_verification::contracts::VerificationError> {
+) -> Result<Value, filament_verification::contracts::VerificationError> {
     let packet = json!({"results": core["results"]});
     let mut references = validate_fixture_result_references(&packet)?;
     for (field, bytes) in [
@@ -257,7 +259,7 @@ fn assemble_portfolio_report(
 
 fn disposition_bytes(core_digest: &str, procedure: &Value, reviewer: &str, value: &str) -> Vec<u8> {
     serde_json::to_vec(&json!({
-        "schemaVersion": "quire-verification.vp04-disposition/v1",
+        "schemaVersion": "filament-verification.vp04-disposition/v1",
         "dispositionId": format!("VP04-{value}"),
         "coreDigest": core_digest,
         "reviewer": reviewer,

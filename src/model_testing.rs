@@ -16,9 +16,9 @@ use crate::contracts::{VerificationError, VerificationErrorCode, jcs_sha256};
 const MAX_MODEL_DOMAIN_DEPTH: usize = 32;
 
 /// Specialized request contract implemented by this provider.
-pub const MODEL_TEST_REQUEST_VERSION: &str = "quire.model-test-request/v1";
+pub const MODEL_TEST_REQUEST_VERSION: &str = "filament.model-test-request/v1";
 /// Terminal method-result contract implemented by this provider.
-pub const MODEL_METHOD_RESULT_VERSION: &str = "quire.method-result/v1";
+pub const MODEL_METHOD_RESULT_VERSION: &str = "filament.method-result/v1";
 
 /// A value in an exact checked model domain.
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd, Serialize)]

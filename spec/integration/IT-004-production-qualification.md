@@ -1,37 +1,37 @@
 ---
 id: IT-004
-title: "Quire-spec production qualification campaign"
+title: "FSL production qualification campaign"
 type: IT
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-023"
+  - target: "ix://agent-ix/filament-verification/FR-023"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-024"
+  - target: "ix://agent-ix/filament-verification/FR-024"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-025"
+  - target: "ix://agent-ix/filament-verification/FR-025"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-026"
+  - target: "ix://agent-ix/filament-verification/FR-026"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-027"
+  - target: "ix://agent-ix/filament-verification/FR-027"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-007"
+  - target: "ix://agent-ix/filament-verification/NFR-007"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-008"
+  - target: "ix://agent-ix/filament-verification/NFR-008"
     type: "verifies"
 ---
-# IT-004: Quire-spec production qualification campaign
+# IT-004: FSL production qualification campaign
 
 ## Objective
 
-Verify one exact `quire-spec` production profile from owner-authored claim through
+Verify one exact `fsl` production profile from owner-authored claim through
 representative corpus, independent oracles, discriminating techniques, real caller
 integration, performance and reproduction evidence, immutable report sealing, and
 external disposition without expanding the reviewed claim.
 
 ## Target Integration
 
-The system under test is the Rust `quire-verification` qualification path. External
+The system under test is the Rust `filament-verification` qualification path. External
 dependencies are exact accepted Agent A shared-reference and parser/compiler
 artifacts, the real production caller, bounded independent oracle tools, Agent C's
 versioned Engineering Assurance handoff, and Quoin evidence retention. Each remains
@@ -81,7 +81,7 @@ No partial campaign becomes broad qualification.
 ## Metadata
 
 - Priority: P1
-- Target Integration: exact production caller, `quire-spec`, portable verification contracts, Engineering Assurance, and Quoin
+- Target Integration: exact production caller, `fsl`, portable verification contracts, Engineering Assurance, and Quoin
 - Automation: Rust automation plus exact Rust review, semantic gap analysis, and one external human disposition
 
 ## Dependencies
@@ -98,5 +98,5 @@ readiness from an active branch.
 ## Traceability
 
 The campaign validates [StR-002](../stakeholder/StR-002-production-qualification.md)
-under [AP-002](../assurance/AP-002-quire-spec-production-qualification.md).
+under [AP-002](../assurance/AP-002-fsl-production-qualification.md).
 

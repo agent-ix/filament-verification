@@ -4,7 +4,7 @@ title: "Bound native process execution"
 type: NFR
 quality_attribute: security
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "constrains"
 ---
 # NFR-006: Bound native process execution

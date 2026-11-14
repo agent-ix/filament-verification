@@ -3,8 +3,8 @@
 
 //! TC-049 linked-plan execution coverage.
 
+use filament_verification::linked_method_plan::*;
 use ix_trace_rs::trace;
-use quire_verification::linked_method_plan::*;
 use std::collections::{BTreeMap, BTreeSet};
 
 struct Fixed(ProviderOutcome);

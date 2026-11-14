@@ -444,7 +444,7 @@ impl SharedReferenceReader {
         }
 
         let canonical = value_at(value, "/canonicalIdentity")?;
-        if string_at(canonical, "/domain")? != "quire.verification.jcs"
+        if string_at(canonical, "/domain")? != "filament.verification.jcs"
             || string_at(canonical, "/version")? != "rfc8785-v1"
             || string_at(canonical, "/algorithm")? != "sha256"
         {
@@ -767,7 +767,7 @@ fn preflight_reference_versions(
             canonical.get("digest").and_then(Value::as_str),
         );
         if let (Some(domain), Some(canonical_version), Some(algorithm), Some(_)) = selection
-            && (domain != "quire.verification.jcs"
+            && (domain != "filament.verification.jcs"
                 || canonical_version != "rfc8785-v1"
                 || algorithm != "sha256")
         {

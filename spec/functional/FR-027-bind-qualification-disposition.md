@@ -3,11 +3,11 @@ id: FR-027
 title: "Bind the production qualification disposition"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-021"
+  - target: "ix://agent-ix/filament-verification/FR-021"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-026"
+  - target: "ix://agent-ix/filament-verification/FR-026"
     type: "depends_on"
 ---
 # FR-027: Bind the production qualification disposition

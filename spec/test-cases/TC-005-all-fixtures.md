@@ -3,9 +3,9 @@ id: TC-005
 title: "Execute the schema against every retained fixture"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-003"
+  - target: "ix://agent-ix/filament-verification/FR-003"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-002"
+  - target: "ix://agent-ix/filament-verification/NFR-002"
     type: "verifies"
 ---
 # TC-005: Execute the schema against every retained fixture

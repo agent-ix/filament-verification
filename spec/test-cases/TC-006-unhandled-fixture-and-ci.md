@@ -3,9 +3,9 @@ id: TC-006
 title: "Reject an unhandled fixture and inspect the CI gate"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-003"
+  - target: "ix://agent-ix/filament-verification/FR-003"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-002"
+  - target: "ix://agent-ix/filament-verification/NFR-002"
     type: "verifies"
 ---
 # TC-006: Reject an unhandled fixture and inspect the CI gate

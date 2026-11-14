@@ -3,7 +3,7 @@ id: TC-026
 title: "Retain every actionable prerequisite"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-013"
+  - target: "ix://agent-ix/filament-verification/FR-013"
     type: verifies
 ---
 # TC-026: Retain Every Actionable Prerequisite

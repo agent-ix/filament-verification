@@ -3,9 +3,9 @@ id: US-005
 title: "Execute complete-V1 verification methods"
 type: US
 relationships:
-  - target: "ix://agent-ix/quire-verification/StR-001"
+  - target: "ix://agent-ix/filament-verification/StR-001"
     type: "traces_to"
-  - target: "ix://agent-ix/quire-verification/StR-002"
+  - target: "ix://agent-ix/filament-verification/StR-002"
     type: "traces_to"
 ---
 # US-005: Execute complete-V1 verification methods
@@ -41,14 +41,14 @@ execute.
 
 ## Constraints (Contextual)
 
-The accepted QSpec owns shared semantics and I14/I15/I18-I21.
+The accepted FSpec owns shared semantics and I14/I15/I18-I21.
 This repository adopts those boundaries and reports contradictions upstream
 instead of changing a shared interface unilaterally.
 
 ## Dependencies (Contextual)
 
 Checked packages and semantic subjects come from the accepted native compiler
-lane. Hybrid and synthesis method results come from `quire-analyze` issue #33.
+lane. Hybrid and synthesis method results come from `filament-analyze` issue #33.
 Integrated execution and the final ecosystem campaign remain external consumers.
 
 ## Priority and Risk (Informative)

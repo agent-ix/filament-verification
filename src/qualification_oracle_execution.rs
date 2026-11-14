@@ -30,9 +30,9 @@ use crate::shared_reference::{ValidatedSharedReference, parse_strict_bounded_jso
 pub const ENGINEERING_ASSURANCE_REVISION: &str = env!("ENGINEERING_ASSURANCE_REVISION");
 
 const RESPONSE_ROLE: &str = "response";
-const ORACLE_RESPONSE_PROTOCOL: &str = "quire-verification.qualification-oracle-response/v1";
+const ORACLE_RESPONSE_PROTOCOL: &str = "filament-verification.qualification-oracle-response/v1";
 const COMPARISON_RESPONSE_PROTOCOL: &str =
-    "quire-verification.qualification-comparison-response/v1";
+    "filament-verification.qualification-comparison-response/v1";
 const ADAPTER_VERSION: &str = "1";
 const CONTRACT_BYTES: &[u8] = include_bytes!("../contracts/e02-draft-2.schema.json");
 const ADAPTER_BYTES: &[u8] = include_bytes!("qualification_oracle_execution.rs");
@@ -258,7 +258,7 @@ pub fn record_qualification_comparison_execution(
     let outcome = response["outcome"].clone();
     let value = json!({
         "contractVersion": wire::CONTRACT_VERSION,
-        "schemaVersion": "quire-verification.qualification-oracle-comparison/v1",
+        "schemaVersion": "filament-verification.qualification-oracle-comparison/v1",
         "kind": "QualificationOracleComparisonRecord",
         "manifestIdentity": context.manifest_identity,
         "bindingId": context.binding["bindingId"],
@@ -375,7 +375,7 @@ pub fn record_qualification_disagreement(
     };
     let value = json!({
         "contractVersion": wire::CONTRACT_VERSION,
-        "schemaVersion": "quire-verification.qualification-disagreement/v1",
+        "schemaVersion": "filament-verification.qualification-disagreement/v1",
         "kind": "QualificationOracleDisagreementRecord",
         "manifestIdentity": manifest.identity(),
         "bindingId": binding["bindingId"],
@@ -710,7 +710,7 @@ fn execution_record(
 ) -> Result<wire::QualificationOracleExecutionRecord, VerificationError> {
     let value = json!({
         "contractVersion": wire::CONTRACT_VERSION,
-        "schemaVersion": "quire-verification.qualification-oracle-execution/v1",
+        "schemaVersion": "filament-verification.qualification-oracle-execution/v1",
         "kind": "QualificationOracleExecutionRecord",
         "operation": context.operation.name(),
         "manifestIdentity": context.manifest_identity,

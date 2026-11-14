@@ -1,17 +1,17 @@
 ---
 id: US-004
-title: "Qualify one quire-spec production profile"
+title: "Qualify one fsl production profile"
 type: US
 relationships:
-  - target: "ix://agent-ix/quire-verification/StR-002"
+  - target: "ix://agent-ix/filament-verification/StR-002"
     type: "traces_to"
 ---
-# US-004: Qualify one quire-spec production profile
+# US-004: Qualify one fsl production profile
 
 ## Story
 
 **As a** verification owner
-**I want** one `quire-spec` production profile evaluated against representative,
+**I want** one `fsl` production profile evaluated against representative,
 adverse, independent, and measured evidence
 **So that** I can accept, revise, or reject that exact profile without mistaking a
 narrow successful fixture for general qualification.
@@ -40,7 +40,7 @@ oracles, resource measurements, and exact dependency identities.
 
 The work consumes versioned outputs from other agents and repositories. It does not
 move their schemas, compiler logic, assurance orchestration, or evidence stores into
-`quire-verification`.
+`filament-verification`.
 
 ## Dependencies (Contextual)
 

@@ -75,7 +75,7 @@ pub fn assemble_portfolio_report(
         (Value::Null, Value::Null, "incomplete")
     };
     let report = json!({
-        "schemaVersion": "quire-verification.vp04-report/v1",
+        "schemaVersion": "filament-verification.vp04-report/v1",
         "core": core,
         "coreDigest": core_digest,
         "dispositionRef": disposition_ref,

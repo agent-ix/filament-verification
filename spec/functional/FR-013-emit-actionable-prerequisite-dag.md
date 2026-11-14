@@ -3,9 +3,9 @@ id: FR-013
 title: "Emit an actionable prerequisite DAG"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: implements
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: depends_on
 ---
 # FR-013: Emit an Actionable Prerequisite DAG

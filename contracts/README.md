@@ -4,7 +4,7 @@
 contracts. Its artifact envelopes resolve the retained shared-reference draft-2
 schema rather than restating that schema's fields. The `validate_contract`,
 wire-type, and RFC 8785 canonicalization boundary that compiles this schema
-now lives in public crate `quire-verification-contracts` (PLAT-861); this
+now lives in public crate `filament-verification-contracts` (PLAT-861); this
 repository depends on it and re-exports it at `contracts`, so internal call
 sites are unchanged. This copy of `e02-draft-2.schema.json` is retained here
 because `src/qualification_oracle_execution.rs` and the acceptance tests embed
@@ -28,7 +28,7 @@ production caller to `invocation`. The implementation derives the
 profile representation from this definition, computes its identity with RFC 8785 JCS,
 and returns all unavailable interfaces as blocked prerequisites without copying
 producer-owned schemas. Each guarantee has a closed claim-authority form. Native formal
-clauses name the sole native Quire source profile and carry one `accepted` observation or
+clauses name the sole native Filament source profile and carry one `accepted` observation or
 owned `gap` for every carried-forward admission rule; the presence of a reference does
 not imply admission. OCL 2.4, SysML v2, and FRETish remain export mappings bound to an
 exact loss report.
@@ -68,7 +68,7 @@ The shared-reference reader consumes Rust wire types (`wire_v1`, `wire_v2`) and 
 validation derived from the retained `shared-reference-1-draft.schema.json` and
 `shared-reference-2-draft/schema.json` files. Both schemas, all fourteen amendment
 fixtures, and their `typify` codegen live in public
-crate `quire-verification-contracts` (PLAT-861, VER-50); this repository holds no copy
+crate `filament-verification-contracts` (PLAT-861, VER-50); this repository holds no copy
 of any of it and re-exports the module unchanged at `contracts::shared_reference`.
 Version 2 is selected only for artifact and semantic envelopes; version 1 is retained
 only for source-map and migration envelopes. Runtime validation compiles the complete

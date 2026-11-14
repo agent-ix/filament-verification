@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "quire-verification/quoin-catalog-export/v1",
+  "schemaVersion": "filament-verification/quoin-catalog-export/v1",
   "source": {
     "quoinRevision": "7072d65db7e236e819d99be42e094ba548e9496a",
     "moduleRevision": "61a20e010d5e758f52864ad3152ccdb304a39d27",
@@ -14,7 +14,7 @@
         "authority": "github.com/agent-ix/spec-artifacts-process",
         "identity": "module:spec-artifacts-process/verification_catalog",
         "revision": {
-          "namespace": "quire-verification",
+          "namespace": "filament-verification",
           "value": "61a20e010d5e758f52864ad3152ccdb304a39d27"
         },
         "digest": "sha256:0b7caed32bb93a5d2edaa8e847a7b602779e30a7cc8c29b15c65d5b0541d32fb",

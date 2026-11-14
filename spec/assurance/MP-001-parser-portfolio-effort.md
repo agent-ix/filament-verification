@@ -5,7 +5,7 @@ type: MeasurementPlan
 status: proposed
 owner: agent-ix-verification-owner
 metric: portfolio_phase_elapsed_nanoseconds
-definition_version: quire-verification.parser-portfolio-effort-v2
+definition_version: filament-verification.parser-portfolio-effort-v2
 stage: baseline
 statistical_design:
   population: valid phase observations from one exact parser-portfolio candidate, fixture pair, dependency closure, environment, and command order
@@ -18,7 +18,7 @@ statistical_design:
     comparator: ge
     threshold: 0
 relationships:
-  - target: ix://agent-ix/quire-verification/FR-020
+  - target: ix://agent-ix/filament-verification/FR-020
     type: measures
 ---
 

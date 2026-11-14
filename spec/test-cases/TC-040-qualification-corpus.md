@@ -3,7 +3,7 @@ id: TC-040
 title: "Qualify corpus population and lineage"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-023"
+  - target: "ix://agent-ix/filament-verification/FR-023"
     type: "verifies"
 ---
 # TC-040: Qualify corpus population and lineage

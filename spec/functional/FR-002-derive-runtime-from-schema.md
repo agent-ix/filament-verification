@@ -3,9 +3,9 @@ id: FR-002
 title: "Derive runtime contract behavior from the schema"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "depends_on"
 ---
 # FR-002: Derive runtime contract behavior from the schema

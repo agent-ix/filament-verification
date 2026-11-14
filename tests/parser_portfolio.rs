@@ -9,16 +9,16 @@ use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::VerificationErrorCode;
-use quire_verification::evidence::assess_evidence;
-use quire_verification::fixtures::validate_fixture_result_references;
-use quire_verification::native_process::{NativeProcessExecutor, NativeProcessOutput};
-use quire_verification::parser_portfolio::{
+use filament_verification::contracts::VerificationErrorCode;
+use filament_verification::evidence::assess_evidence;
+use filament_verification::fixtures::validate_fixture_result_references;
+use filament_verification::native_process::{NativeProcessExecutor, NativeProcessOutput};
+use filament_verification::parser_portfolio::{
     ParserDiagnostic, ParserPortfolioRequest, ParserSource, execute_parser_portfolio,
     validate_diagnostic_response, validate_native_task, validate_parsed_response,
 };
-use quire_verification::shared_reference::ValidatedSharedReference;
+use filament_verification::shared_reference::ValidatedSharedReference;
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use tempfile::TempDir;
@@ -35,10 +35,10 @@ impl Candidate {
         let built = Path::new(env!("CARGO_BIN_EXE_native-process-fixture"));
         let parent = built.parent().expect("fixture build directory");
         let root = tempfile::Builder::new()
-            .prefix("quire-verification-parser-")
+            .prefix("filament-verification-parser-")
             .tempdir_in(parent)
             .expect("candidate root");
-        let executable = root.path().join("quire-spec");
+        let executable = root.path().join("fsl");
         fs::hard_link(built, &executable).expect("immutable fixture link");
         let valid = root.path().join("valid.native");
         let mutation = root.path().join("mutation.native");

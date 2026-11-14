@@ -3,7 +3,7 @@ id: TC-035
 title: "Retain parser portfolio gaps and stale evidence"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "verifies"
 ---
 # TC-035: Retain parser portfolio gaps and stale evidence

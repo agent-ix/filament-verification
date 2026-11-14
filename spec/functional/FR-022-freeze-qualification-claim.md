@@ -3,9 +3,9 @@ id: FR-022
 title: "Freeze an exact qualification claim"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: "depends_on"
 ---
 # FR-022: Freeze an exact qualification claim

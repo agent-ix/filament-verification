@@ -3,11 +3,11 @@ id: FR-033
 title: "Preserve immutable counterexample lineage"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-032"
+  - target: "ix://agent-ix/filament-verification/FR-032"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-specification/FR-312"
+  - target: "ix://agent-ix/filament-specification/FR-312"
     type: "references"
 ---
 # FR-033: Preserve immutable counterexample lineage
@@ -49,4 +49,4 @@ replay result.
 ## Dependencies
 
 - [FR-032](./FR-032-link-semantic-evidence.md) owns the typed evidence graph.
-- `ix://agent-ix/quire-specification/FR-312` owns accepted lineage semantics.
+- `ix://agent-ix/filament-specification/FR-312` owns accepted lineage semantics.

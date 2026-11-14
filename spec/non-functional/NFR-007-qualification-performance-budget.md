@@ -4,7 +4,7 @@ title: "Measure the declared production performance budget"
 type: NFR
 quality_attribute: performance_efficiency
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-026"
+  - target: "ix://agent-ix/filament-verification/FR-026"
     type: "constrains"
 ---
 # NFR-007: Measure the declared production performance budget

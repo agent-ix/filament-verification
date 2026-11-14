@@ -639,7 +639,7 @@ pub fn qualification_scope(
         records.push(ledger_row_identity(row)?);
     }
     records.sort();
-    let mut bytes = b"quire-verification/qualification-scope/v1".to_vec();
+    let mut bytes = b"filament-verification/qualification-scope/v1".to_vec();
     for record in records {
         encode_scope_bytes(&mut bytes, &record)?;
     }

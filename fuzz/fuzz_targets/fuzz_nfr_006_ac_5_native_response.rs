@@ -2,9 +2,9 @@
 
 //! Fuzz target for bounded native-process response decoding.
 
+use filament_verification::native_process::{NativeProcessOutput, parse_native_json_output};
 use ix_trace_rs::trace;
 use libfuzzer_sys::fuzz_target;
-use quire_verification::native_process::{NativeProcessOutput, parse_native_json_output};
 
 /// The native response reader refuses arbitrary valid Unicode output without panicking.
 ///

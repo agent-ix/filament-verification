@@ -1,12 +1,12 @@
 ---
 id: AP-002
-title: Quire-spec bounded production qualification profile
+title: FSL bounded production qualification profile
 type: AssuranceProfile
 status: proposed
 owner: agent-ix-verification-owner
 schema_version: 0.2
 profile_kind: general
-scope: one exact quire-spec candidate, production caller, input population, environment, resource budget, and claim profile
+scope: one exact fsl candidate, production caller, input population, environment, resource budget, and claim profile
 impact_assessments:
   - id: impact-false-production-qualification
     scenario: narrow or correlated evidence is attributed as broad production support
@@ -16,7 +16,7 @@ impact_assessments:
       stochastic_dependency: both
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-022
+      control_ref: ix://agent-ix/filament-verification/FR-022
   - id: impact-oracle-blind-spot
     scenario: self-generated expected output is treated as independent correctness evidence
     severity: material
@@ -25,7 +25,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-024
+      control_ref: ix://agent-ix/filament-verification/FR-024
   - id: impact-production-chain-drift
     scenario: a test adapter passes while the real caller or assurance handoff fails
     severity: material
@@ -34,7 +34,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-026
+      control_ref: ix://agent-ix/filament-verification/FR-026
   - id: impact-hot-path-budget-breach
     scenario: the exact production profile exceeds its owner-supplied time or resource budget
     severity: material
@@ -43,23 +43,23 @@ impact_assessments:
       stochastic_dependency: both
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/NFR-007
+      control_ref: ix://agent-ix/filament-verification/NFR-007
 review_policy:
   mode: require
   operations: [spec-review, code-review, gap-analysis]
 relationships:
-  - target: ix://agent-ix/quire-verification/StR-002
+  - target: ix://agent-ix/filament-verification/StR-002
     type: governs
-  - target: ix://agent-ix/quire-verification/FR-022
+  - target: ix://agent-ix/filament-verification/FR-022
     type: governs
-  - target: ix://agent-ix/quire-verification/FR-027
+  - target: ix://agent-ix/filament-verification/FR-027
     type: governs
-  - target: ix://agent-ix/quire-verification/NFR-007
+  - target: ix://agent-ix/filament-verification/NFR-007
     type: governs
-  - target: ix://agent-ix/quire-verification/NFR-008
+  - target: ix://agent-ix/filament-verification/NFR-008
     type: governs
 ---
-# Quire-spec bounded production qualification profile
+# FSL bounded production qualification profile
 
 ## Decision Boundary
 

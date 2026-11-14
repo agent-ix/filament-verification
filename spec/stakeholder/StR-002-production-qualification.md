@@ -3,28 +3,28 @@ id: StR-002
 title: "Verification owners need bounded production qualification"
 type: StR
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/FR-023"
+  - target: "ix://agent-ix/filament-verification/FR-023"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/FR-024"
+  - target: "ix://agent-ix/filament-verification/FR-024"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/FR-025"
+  - target: "ix://agent-ix/filament-verification/FR-025"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/FR-026"
+  - target: "ix://agent-ix/filament-verification/FR-026"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/FR-027"
+  - target: "ix://agent-ix/filament-verification/FR-027"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/NFR-007"
+  - target: "ix://agent-ix/filament-verification/NFR-007"
     type: "satisfied_by"
-  - target: "ix://agent-ix/quire-verification/NFR-008"
+  - target: "ix://agent-ix/filament-verification/NFR-008"
     type: "satisfied_by"
 ---
 # StR-002: Verification owners need bounded production qualification
 
 ## Stakeholder Need
 
-Verification owners require the qualification system to admit a `quire-spec` candidate
+Verification owners require the qualification system to admit a `fsl` candidate
 to a production path only through affirmative evidence for one explicit input
 population, command surface, environment, resource budget, and claim boundary.
 
@@ -82,4 +82,4 @@ population without rewriting the identity or decision attached to an earlier one
 
 ## Traceability
 
-The user story [US-004](../usecase/US-004-qualify-quire-spec.md) refines this need.
+The user story [US-004](../usecase/US-004-qualify-fsl.md) refines this need.

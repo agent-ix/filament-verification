@@ -3,13 +3,13 @@ id: FR-024
 title: "Bind independent qualification oracles"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-023"
+  - target: "ix://agent-ix/filament-verification/FR-023"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-017"
+  - target: "ix://agent-ix/filament-verification/FR-017"
     type: "depends_on"
   - target: "ix://agent-ix/engineering-assurance/FR-014"
     type: "depends_on"
@@ -101,10 +101,10 @@ limitations, bounded invocation, and disagreement procedure before execution.
   produced from the candidate or sharing an exact reference SHALL NOT be classified as
   independent. An `independent` declaration without positive exact evidence SHALL be
   refused; q-v SHALL NOT infer undisclosed causal independence from unequal identifiers.
-- `quire-verification` SHALL NOT implement process supervision, spawn a process outside
+- `filament-verification` SHALL NOT implement process supervision, spawn a process outside
   the Engineering Assurance interface, materialize an evidence store, or interpret
   arbitrary process output.
-- The `quire-verification` consumer SHALL submit the exact invocation through the
+- The `filament-verification` consumer SHALL submit the exact invocation through the
   accepted Rust Engineering Assurance producer-execution interface, which owns bounded
   host execution and evidence production.
 - The planner SHALL consume only typed result values defined and validated by the

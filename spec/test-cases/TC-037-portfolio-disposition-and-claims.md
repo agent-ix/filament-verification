@@ -3,13 +3,13 @@ id: TC-037
 title: "Bind portfolio disposition and claim limits"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-020"
+  - target: "ix://agent-ix/filament-verification/FR-020"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-021"
+  - target: "ix://agent-ix/filament-verification/FR-021"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-003"
+  - target: "ix://agent-ix/filament-verification/NFR-003"
     type: "verifies"
 ---
 # TC-037: Bind portfolio disposition and claim limits

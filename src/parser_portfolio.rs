@@ -243,7 +243,7 @@ pub fn execute_parser_portfolio(
     });
     let assessment = assess_evidence(&packet, validated_references)?;
     let record = json!({
-        "schemaVersion": "quire-verification.vp04-execution/v1",
+        "schemaVersion": "filament-verification.vp04-execution/v1",
         "executionId": request.execution_id,
         "plan": request.plan,
         "commands": commands,
@@ -592,7 +592,7 @@ fn execute_roundtrip(
         .parent()
         .ok_or_else(|| invalid_input("valid source has no parent directory"))?;
     let formatted_file = tempfile::Builder::new()
-        .prefix(".quire-verification-formatted-")
+        .prefix(".filament-verification-formatted-")
         .suffix(".native")
         .tempfile_in(workspace)
         .map_err(|error| io_error("create formatted parser input", &error))?;

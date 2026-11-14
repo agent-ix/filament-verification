@@ -5,14 +5,14 @@
 
 use std::collections::BTreeMap;
 
-use ix_trace_rs::trace;
-use proptest::prelude::*;
-use quire_verification::relational_hyperproperty::{
+use filament_verification::relational_hyperproperty::{
     AlignedPosition, AlignmentKind, ComparisonOperator, OracleDependence, QuantifiedTrace,
     Quantifier, RELATIONAL_REQUEST_VERSION, RelationalExpression, RelationalMethodOutcome,
     RelationalRequest, RelationalValue, Trace, TraceAlignment, TraceIdentity, TracePoint,
     TracePopulation, TraceValueRef, evaluate_relational,
 };
+use ix_trace_rs::trace;
+use proptest::prelude::*;
 
 fn trace_fixture(identity: &str, local_name: &str, value: i64) -> Trace {
     Trace {

@@ -3,7 +3,7 @@ id: TC-029
 title: "Refuse malformed or unsupported shared references"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: verifies
 ---
 # TC-029: Refuse Malformed or Unsupported Shared References

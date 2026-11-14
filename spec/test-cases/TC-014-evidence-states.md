@@ -3,11 +3,11 @@ id: TC-014
 title: "Distinguish freshness and result states"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-003"
+  - target: "ix://agent-ix/filament-verification/NFR-003"
     type: "verifies"
 ---
 # TC-014: Distinguish freshness and result states

@@ -434,9 +434,9 @@ rejected JavaScript prototype is not evidence.
 
 | Integration ID | Purpose | Target Project | Type | Test Cases | Status |
 |----------------|---------|----------------|------|------------|--------|
-| IT-002 | Qualify the shared-reference packet with an independent Rust reader | agent-ix/quire-specification FS02/FS05 | contract | TC-031 | ✅ Implemented |
-| IT-004 | Qualify one exact production profile end to end | Exact caller, quire-spec, portable contracts, Engineering Assurance, and Quoin | command/process/contracts | TC-039..TC-045 | 🚧 Planned; external dependencies gated |
-| IT-005 | Integrate complete-V1 method results through evidence and ledger development boundaries | QSpec checked-package/runtime, quire-analyze, accepted inventory/corpus, and Quoin intake contracts | Rust contracts/providers | TC-047..TC-052 | ✅ SC-01..SC-07 have executable development coverage; production evidence remains a non-blocking explicit state |
+| IT-002 | Qualify the shared-reference packet with an independent Rust reader | agent-ix/filament-specification FS02/FS05 | contract | TC-031 | ✅ Implemented |
+| IT-004 | Qualify one exact production profile end to end | Exact caller, fsl, portable contracts, Engineering Assurance, and Quoin | command/process/contracts | TC-039..TC-045 | 🚧 Planned; external dependencies gated |
+| IT-005 | Integrate complete-V1 method results through evidence and ledger development boundaries | FSpec checked-package/runtime, filament-analyze, accepted inventory/corpus, and Quoin intake contracts | Rust contracts/providers | TC-047..TC-052 | ✅ SC-01..SC-07 have executable development coverage; production evidence remains a non-blocking explicit state |
 
 ### Integration Test Details
 

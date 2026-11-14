@@ -4,11 +4,11 @@ title: "Deterministic structured comparison"
 type: NFR
 quality_attribute: reliability
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-008"
+  - target: "ix://agent-ix/filament-verification/FR-008"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "constrains"
 ---
 # NFR-001: Deterministic structured comparison

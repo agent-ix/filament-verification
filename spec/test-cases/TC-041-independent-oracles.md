@@ -3,7 +3,7 @@ id: TC-041
 title: "Classify oracle independence and disagreement"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-024"
+  - target: "ix://agent-ix/filament-verification/FR-024"
     type: "verifies"
 ---
 # TC-041: Classify oracle independence and disagreement

@@ -3,7 +3,7 @@ id: TC-011
 title: "Reject an ambiguous compatible capability selection"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "verifies"
 ---
 # TC-011: Reject an ambiguous compatible capability selection

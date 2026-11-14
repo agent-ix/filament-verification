@@ -3,7 +3,7 @@ id: TC-023
 title: "Enforce the JSON resource envelope"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/NFR-005"
+  - target: "ix://agent-ix/filament-verification/NFR-005"
     type: "verifies"
 ---
 # TC-023: Enforce the JSON resource envelope

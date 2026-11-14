@@ -7,25 +7,25 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::Path;
 
-use ix_trace_rs::trace;
-use quire_verification::bounded_portfolio::{
+use filament_verification::bounded_portfolio::{
     run_bounded_portfolio, run_bounded_portfolio_with_adapter,
 };
-use quire_verification::catalog::{adapt_quoin_advice, adapt_quoin_catalog};
-use quire_verification::contracts::{
+use filament_verification::catalog::{adapt_quoin_advice, adapt_quoin_catalog};
+use filament_verification::contracts::{
     MAX_ARRAY_ITEMS, MAX_JSON_BYTES, MAX_JSON_DEPTH, VerificationError, VerificationErrorCode,
     contract_version, input_kinds, jcs_canonicalize, jcs_equal, jcs_sha256, parse_bounded_json,
     validate_contract, validate_plan_value, validate_resource_envelope,
 };
-use quire_verification::evidence::{assess_evidence, findings_for, scope_differences};
-use quire_verification::fixtures::{
+use filament_verification::evidence::{assess_evidence, findings_for, scope_differences};
+use filament_verification::fixtures::{
     render_fixture_packet, validate_all_fixtures, validate_fixture_result_references,
 };
-use quire_verification::planner::build_verification_plan as build_plan_from_validated;
-use quire_verification::shared_reference::{
+use filament_verification::planner::build_verification_plan as build_plan_from_validated;
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 
 type ScopeMutation = (&'static str, fn(&mut Value));
@@ -248,7 +248,7 @@ fn tc_002_rejects_contradictions_task_drift_and_unknown_versions() {
 #[test]
 fn tc_002_refuses_unknown_e02_contract_version_without_fallback() {
     let mut unknown_version = fixture("results.json")["results"][0].clone();
-    unknown_version["contractVersion"] = json!("quire-verification/e02-unknown");
+    unknown_version["contractVersion"] = json!("filament-verification/e02-unknown");
     assert_eq!(
         validate_contract(unknown_version)
             .expect_err("unknown contract version must fail")
@@ -263,8 +263,8 @@ fn tc_046_freezes_e02_accepted_interface_identity() {
     let decision = include_str!("../docs/interface-decision.md");
     for required in [
         "accepted private cross-repository Rust interface",
-        "`agent-ix/quire-verification`",
-        "`quire-verification/e02-draft-2`",
+        "`agent-ix/filament-verification`",
+        "`filament-verification/e02-draft-2`",
         "exact private cross-repository Rust use",
     ] {
         assert!(decision.contains(required), "missing {required}");
@@ -303,7 +303,7 @@ fn tc_046_refuses_lossy_cross_repository_result_projections() {
 #[trace("TC-003", "FR-002-AC-1", "FR-002-AC-2", "NFR-002-AC-1")]
 #[test]
 fn tc_003_derives_contract_vocabulary_and_types_from_one_schema() {
-    assert_eq!(contract_version(), "quire-verification/e02-draft-2");
+    assert_eq!(contract_version(), "filament-verification/e02-draft-2");
     assert_eq!(
         input_kinds(),
         ["state", "relational", "trace", "fault", "manual"]
@@ -1276,7 +1276,7 @@ fn assert_invalid_role_inputs_are_refused(
         VerificationErrorCode::SchemaViolation
     );
     let mut draft_1 = request.clone();
-    draft_1["policy"]["contractVersion"] = json!("quire-verification/e02-draft-1");
+    draft_1["policy"]["contractVersion"] = json!("filament-verification/e02-draft-1");
     assert_eq!(
         build_plan_from_validated(&draft_1, references)
             .expect_err("draft-1 request")

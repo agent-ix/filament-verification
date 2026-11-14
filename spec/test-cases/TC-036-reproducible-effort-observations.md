@@ -3,7 +3,7 @@ id: TC-036
 title: "Record reproducible effort observations"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-020"
+  - target: "ix://agent-ix/filament-verification/FR-020"
     type: "verifies"
 ---
 # TC-036: Record reproducible effort observations

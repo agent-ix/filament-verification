@@ -3,7 +3,7 @@ id: TC-001
 title: "Accept only the five public contract kinds at the schema root"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "verifies"
 ---
 # TC-001: Accept only the five public contract kinds at the schema root

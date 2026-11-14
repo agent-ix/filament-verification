@@ -254,6 +254,34 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223"
 
 [[package]]
+name = "filament-verification"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "engineering-assurance",
+ "ix-trace-rs",
+ "jsonschema",
+ "proptest",
+ "quire-analyze-method-contract",
+ "quire-verification-contracts",
+ "rustix",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "tempfile",
+ "toml",
+]
+
+[[package]]
+name = "filament-verification-fuzz"
+version = "0.0.0"
+dependencies = [
+ "filament-verification",
+ "ix-trace-rs",
+ "libfuzzer-sys",
+]
+
+[[package]]
 name = "find-msvc-tools"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -672,31 +700,12 @@ checksum = "a1d01941d82fa2ab50be1e79e6714289dd7cde78eba4c074bc5a4374f650dfe0"
 [[package]]
 name = "quire-analyze-method-contract"
 version = "0.1.0"
-source = "git+https://github.com/agent-ix/quire-analyze?rev=ddc099b918a6a569987c96cda97d567d2d3bba33#ddc099b918a6a569987c96cda97d567d2d3bba33"
-
-[[package]]
-name = "quire-verification"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "engineering-assurance",
- "ix-trace-rs",
- "jsonschema",
- "proptest",
- "quire-analyze-method-contract",
- "quire-verification-contracts",
- "rustix",
- "serde",
- "serde_json",
- "sha2 0.10.9",
- "tempfile",
- "toml",
-]
+source = "git+https://github.com/agent-ix/filament-analyze?rev=ddc099b918a6a569987c96cda97d567d2d3bba33#ddc099b918a6a569987c96cda97d567d2d3bba33"
 
 [[package]]
 name = "quire-verification-contracts"
 version = "0.1.0"
-source = "git+https://github.com/agent-ix/quire-verification-contracts?rev=be73336844cde3316c734edf18a629de2b4bcb55#be73336844cde3316c734edf18a629de2b4bcb55"
+source = "git+https://github.com/agent-ix/filament-verification-contracts?rev=be73336844cde3316c734edf18a629de2b4bcb55#be73336844cde3316c734edf18a629de2b4bcb55"
 dependencies = [
  "chrono",
  "jsonschema",
@@ -708,15 +717,6 @@ dependencies = [
  "sha2 0.10.9",
  "thiserror",
  "typify",
-]
-
-[[package]]
-name = "quire-verification-fuzz"
-version = "0.0.0"
-dependencies = [
- "ix-trace-rs",
- "libfuzzer-sys",
- "quire-verification",
 ]
 
 [[package]]

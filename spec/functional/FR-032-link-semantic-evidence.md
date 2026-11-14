@@ -3,15 +3,15 @@ id: FR-032
 title: "Link exact semantic subjects to evidence"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-specification/FR-310"
+  - target: "ix://agent-ix/filament-specification/FR-310"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-337"
+  - target: "ix://agent-ix/filament-specification/FR-337"
     type: "references"
 ---
 # FR-032: Link exact semantic subjects to evidence

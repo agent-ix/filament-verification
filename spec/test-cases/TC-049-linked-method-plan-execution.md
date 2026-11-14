@@ -3,9 +3,9 @@ id: TC-049
 title: "Linked method plan execution and accounting"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-031"
+  - target: "ix://agent-ix/filament-verification/FR-031"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-009"
+  - target: "ix://agent-ix/filament-verification/NFR-009"
     type: "verifies"
 ---
 # TC-049: Linked method plan execution and accounting

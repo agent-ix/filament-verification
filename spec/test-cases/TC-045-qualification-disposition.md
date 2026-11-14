@@ -3,9 +3,9 @@ id: TC-045
 title: "Seal and bind the qualification disposition"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-027"
+  - target: "ix://agent-ix/filament-verification/FR-027"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-008"
+  - target: "ix://agent-ix/filament-verification/NFR-008"
     type: "verifies"
 ---
 # TC-045: Seal and bind the qualification disposition

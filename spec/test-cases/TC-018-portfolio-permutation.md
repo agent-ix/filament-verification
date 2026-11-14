@@ -3,9 +3,9 @@ id: TC-018
 title: "Compare catalog parity by technique identifier"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-001"
+  - target: "ix://agent-ix/filament-verification/NFR-001"
     type: "verifies"
 ---
 # TC-018: Compare catalog parity by technique identifier

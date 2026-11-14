@@ -3,9 +3,9 @@ id: TC-010
 title: "Expose unsupported and blocked verification work"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-010"
+  - target: "ix://agent-ix/filament-verification/FR-010"
     type: "verifies"
 ---
 # TC-010: Expose unsupported and blocked verification work

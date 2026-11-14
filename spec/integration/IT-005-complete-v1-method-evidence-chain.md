@@ -3,17 +3,17 @@ id: IT-005
 title: "Complete-V1 method and evidence development chain"
 type: IT
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-029"
+  - target: "ix://agent-ix/filament-verification/FR-029"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-030"
+  - target: "ix://agent-ix/filament-verification/FR-030"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-031"
+  - target: "ix://agent-ix/filament-verification/FR-031"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-032"
+  - target: "ix://agent-ix/filament-verification/FR-032"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-033"
+  - target: "ix://agent-ix/filament-verification/FR-033"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/FR-034"
+  - target: "ix://agent-ix/filament-verification/FR-034"
     type: "verifies"
 ---
 # IT-005: Complete-V1 method and evidence development chain
@@ -27,8 +27,8 @@ requiring production evidence or a release disposition.
 
 ## Target Integration
 
-The system under test is `quire-verification`. External dependencies are the
-accepted checked-package/native-runtime interfaces, `quire-analyze` method
+The system under test is `filament-verification`. External dependencies are the
+accepted checked-package/native-runtime interfaces, `filament-analyze` method
 provider interface, accepted 176-row inventory/corpus shapes, and Quoin evidence
 intake boundary. Tests use local fixtures or explicit unavailable states;
 they do not deploy or invoke a production system.
@@ -70,12 +70,12 @@ produces no production-readiness, deployment, release, or certification claim.
 ## Metadata
 
 - Priority: P0
-- Target Integration: QSpec I04/I10/I13-I15/I18-I21 development boundaries
+- Target Integration: FSpec I04/I10/I13-I15/I18-I21 development boundaries
 - Automation: Automated Rust tests with fixtures
 
 ## Dependencies
 
-The hybrid/synthesis provider fixture is owned by `ix://agent-ix/quire-analyze/issues/33`.
+The hybrid/synthesis provider fixture is owned by `ix://agent-ix/filament-analyze/issues/33`.
 The final cross-lane integrated execution campaign is outside this repository.
 
 ## Notes
@@ -86,6 +86,6 @@ precondition for the implementation or execution of this integration test.
 ## Traceability
 
 This test covers [FR-029](../functional/FR-029-generate-model-tests.md) through
-[FR-034](../functional/FR-034-qualify-complete-v1-ledger.md) and adopts QSpec
+[FR-034](../functional/FR-034-qualify-complete-v1-ledger.md) and adopts FSpec
 TC-212 through TC-216 and TC-230 through TC-232 at the repository boundary.
 

@@ -3,19 +3,19 @@ id: FR-034
 title: "Account the complete-V1 qualification ledger"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-032"
+  - target: "ix://agent-ix/filament-verification/FR-032"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-033"
+  - target: "ix://agent-ix/filament-verification/FR-033"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-specification/FR-311"
+  - target: "ix://agent-ix/filament-specification/FR-311"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-335"
+  - target: "ix://agent-ix/filament-specification/FR-335"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-336"
+  - target: "ix://agent-ix/filament-specification/FR-336"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-338"
+  - target: "ix://agent-ix/filament-specification/FR-338"
     type: "references"
 ---
 # FR-034: Account the complete-V1 qualification ledger

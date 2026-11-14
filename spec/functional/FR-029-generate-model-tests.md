@@ -3,11 +3,11 @@ id: FR-029
 title: "Generate and shrink complete-V1 model tests"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-specification/FR-190"
+  - target: "ix://agent-ix/filament-specification/FR-190"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-336"
+  - target: "ix://agent-ix/filament-specification/FR-336"
     type: "references"
 ---
 # FR-029: Generate and shrink complete-V1 model tests
@@ -60,4 +60,4 @@ oracle.
 ## Dependencies
 
 - [interface-001](../interface/interface-001-verification-method-provider.md) owns the common request/result boundary independently of production qualification.
-- `ix://agent-ix/quire-specification/FR-190` and `ix://agent-ix/quire-specification/FR-336` are the accepted semantic and corpus contracts.
+- `ix://agent-ix/filament-specification/FR-190` and `ix://agent-ix/filament-specification/FR-336` are the accepted semantic and corpus contracts.

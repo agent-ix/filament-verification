@@ -3,7 +3,7 @@ id: TC-032
 title: "Apply the earliest evidence freshness bound"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-018"
+  - target: "ix://agent-ix/filament-verification/FR-018"
     type: verifies
 ---
 # TC-032: Apply the Earliest Evidence Freshness Bound

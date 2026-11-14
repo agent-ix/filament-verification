@@ -3,11 +3,11 @@ id: FR-030
 title: "Analyze relational and finite-trace hyperproperties"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-017"
+  - target: "ix://agent-ix/filament-verification/FR-017"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-specification/FR-191"
+  - target: "ix://agent-ix/filament-specification/FR-191"
     type: "references"
 ---
 # FR-030: Analyze relational and finite-trace hyperproperties
@@ -59,4 +59,4 @@ alignment and correlation relations.
 ## Dependencies
 
 - [FR-017](./FR-017-retain-oracle-dependence.md) owns oracle-dependence classification.
-- `ix://agent-ix/quire-specification/FR-191` owns the accepted relational semantics.
+- `ix://agent-ix/filament-specification/FR-191` owns the accepted relational semantics.

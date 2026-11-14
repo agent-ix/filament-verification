@@ -5,12 +5,12 @@
 
 mod support;
 
-use ix_trace_rs::trace;
-use proptest::prelude::*;
-use quire_verification::qualification_technique::{
+use filament_verification::qualification_technique::{
     QualificationTechniqueOutcome, qualify_technique_manifest,
 };
-use quire_verification::shared_reference::ValidatedSharedReference;
+use filament_verification::shared_reference::ValidatedSharedReference;
+use ix_trace_rs::trace;
+use proptest::prelude::*;
 use serde_json::{Value, json};
 use support::qualification_technique::{TechniqueFixture, fixture, native_gapped_fixture, proofs};
 
@@ -23,7 +23,7 @@ fn technique_proofs(manifest: &Value, catalog: &Value) -> Vec<ValidatedSharedRef
 fn freeze(
     candidate: Value,
     fixture: &TechniqueFixture,
-) -> Result<QualificationTechniqueOutcome, quire_verification::contracts::VerificationError> {
+) -> Result<QualificationTechniqueOutcome, filament_verification::contracts::VerificationError> {
     let proof = technique_proofs(&candidate, &fixture.catalog);
     qualify_technique_manifest(
         candidate,

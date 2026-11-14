@@ -3,9 +3,9 @@ id: TC-044
 title: "Measure and reproduce the exact production profile"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/NFR-007"
+  - target: "ix://agent-ix/filament-verification/NFR-007"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-008"
+  - target: "ix://agent-ix/filament-verification/NFR-008"
     type: "verifies"
 ---
 # TC-044: Measure and reproduce the exact production profile

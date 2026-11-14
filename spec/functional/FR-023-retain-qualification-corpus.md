@@ -3,9 +3,9 @@ id: FR-023
 title: "Retain an identified qualification corpus"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "depends_on"
 ---
 # FR-023: Retain an identified qualification corpus

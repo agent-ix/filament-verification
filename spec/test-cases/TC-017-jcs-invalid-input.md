@@ -3,7 +3,7 @@ id: TC-017
 title: "Reject values outside the JCS JSON domain"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-008"
+  - target: "ix://agent-ix/filament-verification/FR-008"
     type: "verifies"
 ---
 # TC-017: Reject values outside the JCS JSON domain

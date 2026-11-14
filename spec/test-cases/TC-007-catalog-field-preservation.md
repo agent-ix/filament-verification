@@ -3,7 +3,7 @@ id: TC-007
 title: "Preserve complete Quoin method records"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-004"
+  - target: "ix://agent-ix/filament-verification/FR-004"
     type: "verifies"
 ---
 # TC-007: Preserve complete Quoin method records

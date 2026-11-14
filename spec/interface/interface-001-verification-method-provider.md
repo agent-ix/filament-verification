@@ -10,8 +10,8 @@ type: interface
 ```yaml
 name: VerificationMethodProvider
 contract_versions:
-  plan: quire.verification-plan/v1
-  result: quire.method-result/v1
+  plan: filament.verification-plan/v1
+  result: filament.method-result/v1
 associated_types:
   - VerificationPlan
   - PlanNode

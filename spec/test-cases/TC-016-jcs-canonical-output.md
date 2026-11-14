@@ -3,9 +3,9 @@ id: TC-016
 title: "Canonicalize valid JSON with RFC 8785 JCS"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-008"
+  - target: "ix://agent-ix/filament-verification/FR-008"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-001"
+  - target: "ix://agent-ix/filament-verification/NFR-001"
     type: "verifies"
 ---
 # TC-016: Canonicalize valid JSON with RFC 8785 JCS

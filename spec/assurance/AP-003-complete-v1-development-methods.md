@@ -16,7 +16,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-031
+      control_ref: ix://agent-ix/filament-verification/FR-031
   - id: impact-false-qualification-accounting
     scenario: a missing inventory row, correlated evidence, or production ceremony is hidden by an aggregate status
     severity: material
@@ -25,16 +25,16 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-034
+      control_ref: ix://agent-ix/filament-verification/FR-034
 review_policy:
   mode: require
   operations: [spec-review, code-review, gap-analysis]
 relationships:
-  - target: ix://agent-ix/quire-verification/US-005
+  - target: ix://agent-ix/filament-verification/US-005
     type: governs
-  - target: ix://agent-ix/quire-verification/FR-029
+  - target: ix://agent-ix/filament-verification/FR-029
     type: governs
-  - target: ix://agent-ix/quire-verification/FR-034
+  - target: ix://agent-ix/filament-verification/FR-034
     type: governs
 ---
 # Complete-V1 development method assurance profile

@@ -1,11 +1,11 @@
 ---
 id: MP-002
-title: Quire-spec production qualification measurement
+title: FSL production qualification measurement
 type: MeasurementPlan
 status: proposed
 owner: agent-ix-verification-owner
-metric: quire_spec_profile_phase_duration
-definition_version: quire-verification.production-qualification-v3
+metric: filament_spec_profile_phase_duration
+definition_version: filament-verification.production-qualification-v3
 stage: gate
 ground_truth_kind: mechanical
 objective:
@@ -53,19 +53,19 @@ negative_controls:
       collected result to that identity, so an earlier profile's result cannot
       present as current, is Task-031's still-unbuilt measurement path
 relationships:
-  - target: ix://agent-ix/quire-verification/NFR-007
+  - target: ix://agent-ix/filament-verification/NFR-007
     type: measures
-  - target: ix://agent-ix/quire-verification/NFR-008
+  - target: ix://agent-ix/filament-verification/NFR-008
     type: references
-  - target: ix://agent-ix/quire-verification/IT-004
+  - target: ix://agent-ix/filament-verification/IT-004
     type: references
 ---
-# Quire-spec production qualification measurement
+# FSL production qualification measurement
 
 ## Decision Use
 
 The measurements decide whether one exact production profile satisfies its
-owner-supplied phase budgets. They do not create a universal `quire-spec` SLA,
+owner-supplied phase budgets. They do not create a universal `fsl` SLA,
 compare developer productivity, or establish general scale.
 
 ## Population

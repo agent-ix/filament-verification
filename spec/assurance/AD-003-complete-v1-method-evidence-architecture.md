@@ -4,27 +4,27 @@ title: Complete-V1 method and evidence architecture
 type: ArchitectureDescription
 status: proposed
 owner: agent-ix-verification-owner
-system: quire-verification complete-V1 development lane
+system: filament-verification complete-V1 development lane
 relationships:
-  - target: ix://agent-ix/quire-verification/US-005
+  - target: ix://agent-ix/filament-verification/US-005
     type: realizes
-  - target: ix://agent-ix/quire-verification/FR-031
+  - target: ix://agent-ix/filament-verification/FR-031
     type: realizes
-  - target: ix://agent-ix/quire-verification/FR-034
+  - target: ix://agent-ix/filament-verification/FR-034
     type: realizes
-  - target: ix://agent-ix/quire-specification/AD-009
+  - target: ix://agent-ix/filament-specification/AD-009
     type: references
-  - target: ix://agent-ix/quire-specification/AD-011
+  - target: ix://agent-ix/filament-specification/AD-011
     type: references
 ---
 # Complete-V1 method and evidence architecture
 
 ## System Boundary
 
-`quire-verification` owns linked plan validation, deterministic coordination,
+`filament-verification` owns linked plan validation, deterministic coordination,
 model-test and relational providers, typed method-result composition, evidence
 graph construction, counterexample lineage, and qualification-ledger accounting.
-`quire-analyze` owns continuous/hybrid reachability and bounded synthesis.
+`filament-analyze` owns continuous/hybrid reachability and bounded synthesis.
 Checked-package/native-runtime producers, other method providers, Engineering
 Assurance execution, Quoin retention/sufficiency, integrated execution, and the
 eventual human decision remain external and cross exact versioned interfaces.
@@ -51,7 +51,7 @@ flowchart LR
   L -. future .-> H[Attributed decision]
 ```
 
-The plan/result boundary adopts QSpec I14/I15. The evidence boundary adopts
+The plan/result boundary adopts FSpec I14/I15. The evidence boundary adopts
 I18-I21. Semantic outcomes and provider execution states are separate axes.
 Every node reaches one terminal disposition, so a failed prerequisite blocks
 only typed descendants while siblings remain available.
@@ -68,7 +68,7 @@ only typed descendants while siblings remain available.
 
 ## Risks
 
-- **Shared-contract drift — owner: lane D; review before each consumer merge.** Pin merged QSpec and producer revisions; report contradictions upstream.
+- **Shared-contract drift — owner: lane D; review before each consumer merge.** Pin merged FSpec and producer revisions; report contradictions upstream.
 - **Outcome promotion — owner: method implementer; review in every provider PR.** Enforce disjoint semantic and execution dispositions in the common result type.
 - **Correlated evidence — owner: evidence implementer; review before ledger intake.** Retain dependence and reject circular/self discharge.
 - **Ceremony coupling — owner: lane D; review in plan changes.** No development task may depend on a production profile, production evidence, or final decision.

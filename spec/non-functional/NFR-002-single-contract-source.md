@@ -4,11 +4,11 @@ title: "Contract source maintainability"
 type: NFR
 quality_attribute: maintainability
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-002"
+  - target: "ix://agent-ix/filament-verification/FR-002"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-003"
+  - target: "ix://agent-ix/filament-verification/FR-003"
     type: "constrains"
 ---
 # NFR-002: Contract source maintainability
