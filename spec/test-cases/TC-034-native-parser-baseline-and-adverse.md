@@ -3,7 +3,7 @@ id: TC-034
 title: "Execute native parser baseline and adverse cases"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "verifies"
 ---
 # TC-034: Execute native parser baseline and adverse cases

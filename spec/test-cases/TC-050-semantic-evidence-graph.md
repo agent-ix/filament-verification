@@ -3,7 +3,7 @@ id: TC-050
 title: "Semantic evidence graph integrity"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-032"
+  - target: "ix://agent-ix/filament-verification/FR-032"
     type: "verifies"
 ---
 # TC-050: Semantic evidence graph integrity

@@ -1,6 +1,6 @@
 ---
 type: master-requirements
-name: quire-verification
+name: filament-verification
 org: agent-ix
 component_type: rust-library
 implementation_language: rust
@@ -15,7 +15,7 @@ standards_alignment:
   - rfc-8785
 ---
 # Master Requirements Specification
-## Quire Verification Compatibility, Native Planning, and Evidence Assessment
+## Filament Verification Compatibility, Native Planning, and Evidence Assessment
 
 ## 1. Purpose
 
@@ -65,7 +65,7 @@ retained reports, and continuous-integration checks in this repository.
 - Relational and finite-trace hyperproperty analysis with explicit populations, ordered quantifiers, and total alignment.
 - Linked complete-V1 method plans with isolated provider failures and one disposition per node.
 - Typed evidence graphs, immutable counterexample lineage, and a 176-row qualification ledger.
-- Development integration of hybrid-reachability and bounded-synthesis results from `quire-analyze`.
+- Development integration of hybrid-reachability and bounded-synthesis results from `filament-analyze`.
 - Fixture validation, retained reports, and Rust repository CI checks for this slice.
 
 ### 2.2 Out of Scope
@@ -75,7 +75,7 @@ retained reports, and continuous-integration checks in this repository.
 - Public publication of the private E02 contract or reusable-artifact packet.
 - Execution of a model checker, fuzzer, fault injector, generated backend, evaluator, or production system.
 - A parser portfolio outside the reviewed bounded syntax profile or a general parser-effectiveness claim.
-- Qualification of every `quire-spec` command, semantic stage, corpus, caller,
+- Qualification of every `fsl` command, semantic stage, corpus, caller,
   environment, platform, or later candidate revision from one production profile.
 - Changes to Agent A-owned FS02/FS05 or parser/compiler producers, Agent C-owned
   Engineering Assurance, Quoin orchestration or evidence storage, Agent D work,
@@ -132,7 +132,7 @@ lives under `integration/`. Criterion-level verification coverage is indexed in
 | US-001 | Plan portable verification work | Groundwork implemented |
 | US-002 | Assess evidence without false attribution | Groundwork implemented |
 | US-003 | Detect compatibility regressions locally | Groundwork implemented |
-| US-004 | Qualify one quire-spec production profile | Proposed |
+| US-004 | Qualify one fsl production profile | Proposed |
 | US-005 | Execute complete-V1 verification methods | Specified; implementation pending |
 | FR-001 | Validate the five public contracts | Implemented; verified |
 | FR-002 | Derive runtime contract behavior from the schema | Implemented; verified |
@@ -178,7 +178,7 @@ lives under `integration/`. Criterion-level verification coverage is indexed in
 | NFR-008 | Reproduce every qualification identity and result | Proposed |
 | NFR-009 | Deterministic bounded method and ledger accounting | Specified; implementation pending |
 | IT-002 | Independent shared-reference consumer qualification | Implemented; verified |
-| IT-004 | Quire-spec production qualification campaign | Proposed |
+| IT-004 | FSL production qualification campaign | Proposed |
 | IT-005 | Complete-V1 method and evidence development chain | Specified; implementation pending |
 
 ## 6. Identification and Traceability
@@ -223,9 +223,9 @@ requirements, tests, fixtures, and retained reports without reinterpreting
 draft-1 evidence.
 
 The owner accepted VP04's bounded automated groundwork for landing and deferred
-broader `quire-spec` production qualification to issue #13. FR-022 through FR-027, NFR-007,
+broader `fsl` production qualification to issue #13. FR-022 through FR-027, NFR-007,
 NFR-008, IT-004, AP-002, AD-002, and MP-002 define the next qualification profile.
-Their implementation must remain within `quire-verification`, consume other
+Their implementation must remain within `filament-verification`, consume other
 agents' accepted versioned outputs, and leave unavailable producer work blocked.
 
 ## 9. References
@@ -233,7 +233,7 @@ agents' accepted versioned outputs, and leave unavailable producer work blocked.
 - RFC 8785, JSON Canonicalization Scheme.
 - ISO/IEC/IEEE 29148, Requirements Engineering.
 - `contracts/e02-draft-2.schema.json`, the private versioned contract packet.
-- `agent-ix/quire-specification`, accepted private shared-reference packet.
-- `agent-ix/quire-verification#13`, the production-qualification expansion epic.
-- `agent-ix/quire-specification`, accepted complete-V1 method, interface, evidence, and qualification semantics.
-- `agent-ix/quire-verification#34` through `#38` and `agent-ix/quire-analyze#33`, the complete-V1 lane-D development tickets.
+- `agent-ix/filament-specification`, accepted private shared-reference packet.
+- `agent-ix/filament-verification#13`, the production-qualification expansion epic.
+- `agent-ix/filament-specification`, accepted complete-V1 method, interface, evidence, and qualification semantics.
+- `agent-ix/filament-verification#34` through `#38` and `agent-ix/filament-analyze#33`, the complete-V1 lane-D development tickets.

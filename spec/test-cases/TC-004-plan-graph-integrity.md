@@ -3,7 +3,7 @@ id: TC-004
 title: "Reject invalid verification plan dependency graphs"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-002"
+  - target: "ix://agent-ix/filament-verification/FR-002"
     type: "verifies"
 ---
 # TC-004: Reject invalid verification plan dependency graphs

@@ -11,9 +11,9 @@ use sha2::{Digest, Sha256};
 use crate::contracts::jcs_sha256;
 
 /// Version of the linked-plan request contract.
-pub const LINKED_PLAN_VERSION: &str = "quire.verification-plan/v1";
+pub const LINKED_PLAN_VERSION: &str = "filament.verification-plan/v1";
 /// Version of the terminal node-accounting contract.
-pub const LINKED_RESULT_VERSION: &str = "quire.method-result/v1";
+pub const LINKED_RESULT_VERSION: &str = "filament.method-result/v1";
 
 /// A declared dependency edge kind.
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]

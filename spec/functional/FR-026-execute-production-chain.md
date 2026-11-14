@@ -3,11 +3,11 @@ id: FR-026
 title: "Execute the declared production chain"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-025"
+  - target: "ix://agent-ix/filament-verification/FR-025"
     type: "depends_on"
 ---
 # FR-026: Execute the declared production chain
@@ -16,7 +16,7 @@ relationships:
 
 When every producer interface selected by the qualification profile is accepted at
 an exact revision, the integration runner SHALL execute the real declared caller,
-`quire-spec` command path, portable result boundary, and assurance handoff without
+`fsl` command path, portable result boundary, and assurance handoff without
 substituting a test-only transport or duplicated producer implementation.
 
 ## Inputs
@@ -45,7 +45,7 @@ substituting a test-only transport or duplicated producer implementation.
 
 | ID | Constraint | Type | Validation |
 |----|------------|------|------------|
-| FR-026-CON-1 | `quire-verification` SHALL own only portable planning/result semantics without absorbing parser/compiler, Engineering Assurance, Quoin orchestration, or evidence-store behavior. | Ownership | Inspection (TC-043) |
+| FR-026-CON-1 | `filament-verification` SHALL own only portable planning/result semantics without absorbing parser/compiler, Engineering Assurance, Quoin orchestration, or evidence-store behavior. | Ownership | Inspection (TC-043) |
 | FR-026-CON-2 | Cross-repository execution SHALL use versioned structured interfaces and exact revisions. | Compatibility | Test (TC-043) |
 
 ## Acceptance Criteria

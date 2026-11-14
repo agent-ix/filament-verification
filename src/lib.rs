@@ -11,10 +11,10 @@ pub mod bounded_portfolio;
 pub mod catalog;
 /// Schema-owned public contracts, RFC 8785 canonicalization, and bounded JSON ingestion.
 ///
-/// Extracted into public crate `quire-verification-contracts` (PLAT-861); re-exported here so
+/// Extracted into public crate `filament-verification-contracts` (PLAT-861); re-exported here so
 /// every internal call site, including the internal-only schema definitions reached through
 /// `contracts::validate_schema_definition`, is unchanged.
-pub use quire_verification_contracts as contracts;
+pub use filament_verification_contracts as contracts;
 pub mod evidence;
 pub mod evidence_ledger;
 pub mod fixtures;

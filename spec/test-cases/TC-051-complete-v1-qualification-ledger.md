@@ -3,9 +3,9 @@ id: TC-051
 title: "Complete-V1 176-row qualification ledger"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-034"
+  - target: "ix://agent-ix/filament-verification/FR-034"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-009"
+  - target: "ix://agent-ix/filament-verification/NFR-009"
     type: "verifies"
 ---
 # TC-051: Complete-V1 176-row qualification ledger

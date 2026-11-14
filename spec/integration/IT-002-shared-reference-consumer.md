@@ -3,7 +3,7 @@ id: IT-002
 title: "Independent shared-reference consumer qualification"
 type: IT
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: verifies
 ---
 # IT-002: Independent Shared-Reference Consumer Qualification
@@ -15,14 +15,14 @@ without executing or importing the producer's validator.
 
 ## Target Integration
 
-The system under test is the `quire-verification` bounded Rust reader. The target
+The system under test is the `filament-verification` bounded Rust reader. The target
 is the accepted schema and data-only fixture packet owned by
-`agent-ix/quire-specification` FS02/FS05.
+`agent-ix/filament-specification` FS02/FS05.
 
 ## Preconditions
 
 - B's consumer-specific JCS and six role findings are resolved in the accepted packet.
-- The packet is consumed through public `quire-verification-contracts`.
+- The packet is consumed through public `filament-verification-contracts`.
 
 ## Inputs
 

@@ -6,7 +6,7 @@ status: active
 owner: agent-ix-verification-owner
 schema_version: 0.2
 profile_kind: general
-scope: one candidate revision of the private quire-verification bounded compatibility slice
+scope: one candidate revision of the private filament-verification bounded compatibility slice
 impact_assessments:
   - id: impact-false-evidence-support
     scenario: a foreign, stale, ambiguous, or adverse result is attributed as support
@@ -16,7 +16,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/FR-006
+      control_ref: ix://agent-ix/filament-verification/FR-006
   - id: impact-unbounded-ingestion
     scenario: an adversarial JSON input exhausts qualified-path memory or stack
     severity: material
@@ -25,7 +25,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/NFR-005
+      control_ref: ix://agent-ix/filament-verification/NFR-005
   - id: impact-language-disqualification
     scenario: executable logic remains in a language barred from the qualified path
     severity: material
@@ -34,7 +34,7 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/NFR-004
+      control_ref: ix://agent-ix/filament-verification/NFR-004
   - id: impact-unbounded-native-process
     scenario: a native verification child hangs, floods output, inherits undeclared state, or is invoked through an ambiguous shell boundary
     severity: material
@@ -43,18 +43,18 @@ impact_assessments:
       stochastic_dependency: none
     detect_before_harm:
       expected: true
-      control_ref: ix://agent-ix/quire-verification/NFR-006
+      control_ref: ix://agent-ix/filament-verification/NFR-006
 review_policy:
   mode: require
   operations: [spec-review, code-review, gap-analysis]
 relationships:
-  - target: ix://agent-ix/quire-verification/StR-001
+  - target: ix://agent-ix/filament-verification/StR-001
     type: governs
-  - target: ix://agent-ix/quire-verification/NFR-004
+  - target: ix://agent-ix/filament-verification/NFR-004
     type: governs
-  - target: ix://agent-ix/quire-verification/NFR-005
+  - target: ix://agent-ix/filament-verification/NFR-005
     type: governs
-  - target: ix://agent-ix/quire-verification/NFR-006
+  - target: ix://agent-ix/filament-verification/NFR-006
     type: governs
 ---
 # Qualified Rust verification-path profile

@@ -3,9 +3,9 @@ id: TC-031
 title: "Execute the independent shared-reference consumer"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: verifies
-  - target: "ix://agent-ix/quire-verification/IT-002"
+  - target: "ix://agent-ix/filament-verification/IT-002"
     type: verifies
 ---
 # TC-031: Execute the Independent Shared-Reference Consumer

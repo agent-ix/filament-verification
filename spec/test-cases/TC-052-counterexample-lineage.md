@@ -3,7 +3,7 @@ id: TC-052
 title: "Immutable counterexample lineage and replay"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-033"
+  - target: "ix://agent-ix/filament-verification/FR-033"
     type: "verifies"
 ---
 # TC-052: Immutable counterexample lineage and replay

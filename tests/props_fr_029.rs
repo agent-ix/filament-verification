@@ -3,12 +3,12 @@
 
 //! Property tests generated from the extractable FR-029 obligations.
 
-use ix_trace_rs::trace;
-use proptest::prelude::*;
-use quire_verification::model_testing::{
+use filament_verification::model_testing::{
     CheckedDomain, CheckedField, CheckedModel, CheckedPredicate, MODEL_TEST_REQUEST_VERSION,
     ModelCase, ModelTestRequest, generate_model_cases,
 };
+use ix_trace_rs::trace;
+use proptest::prelude::*;
 
 fn request(seed: u64, minimum: i64, maximum: i64) -> ModelTestRequest {
     ModelTestRequest {

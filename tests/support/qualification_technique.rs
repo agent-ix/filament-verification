@@ -3,24 +3,24 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use quire_verification::contracts::jcs_sha256;
-use quire_verification::qualification_corpus::{
+use filament_verification::contracts::jcs_sha256;
+use filament_verification::qualification_corpus::{
     FrozenQualificationCorpus, QualificationCorpusOutcome, qualify_corpus_manifest,
 };
-use quire_verification::qualification_oracle::{
+use filament_verification::qualification_oracle::{
     FrozenQualificationOracleManifest, QualificationOracleOutcome, qualify_oracle_manifest,
 };
-use quire_verification::qualification_profile::{
+use filament_verification::qualification_profile::{
     FrozenQualificationProfile, QualificationProfileOutcome, freeze_qualification_profile,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
-const WIRE_IDENTITY: &str = "quire-verification.qualification-technique-fixture/v1";
+const WIRE_IDENTITY: &str = "filament-verification.qualification-technique-fixture/v1";
 
 pub struct TechniqueFixture {
     pub profile: Box<FrozenQualificationProfile>,
@@ -73,8 +73,8 @@ fn interface(id: &str, role: &str) -> Value {
 
 fn profile_value(claim_authority: &Value, technique_id: &str, stopping_rule: &str) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-profile/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-profile/v1",
         "kind": "QualificationProfile",
         "profileId": "QP-TECHNIQUE-001",
         "profileRevision": "1",
@@ -88,7 +88,7 @@ fn profile_value(claim_authority: &Value, technique_id: &str, stopping_rule: &st
             "workingDirectoryRef": reference("environment", "workspace"),
             "inputBinding": "replace the corpus path",
             "expectedExitCodes": [0, 1],
-            "responseKind": "quire-spec.syntax-cli/v1"
+            "responseKind": "fsl.syntax-cli/v1"
         }],
         "inputPopulation": {
             "populationId": "POP-TECHNIQUE-001",
@@ -215,8 +215,8 @@ fn freeze_profile(
 
 fn freeze_corpus(profile: &FrozenQualificationProfile) -> Box<FrozenQualificationCorpus> {
     let value = json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-corpus/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-corpus/v1",
         "kind": "QualificationCorpusManifest",
         "manifestId": "QCM-TECHNIQUE-001",
         "manifestRevision": "1",
@@ -248,8 +248,8 @@ fn freeze_oracle(
     corpus: &FrozenQualificationCorpus,
 ) -> Box<FrozenQualificationOracleManifest> {
     let value = json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-oracles/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-oracles/v1",
         "kind": "QualificationOracleManifest",
         "manifestId": "QOM-TECHNIQUE-001",
         "profileIdentity": profile.identity(),
@@ -287,8 +287,8 @@ fn technique_manifest(
     technique: &Value,
 ) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-techniques/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-techniques/v1",
         "kind": "QualificationTechniqueManifest",
         "manifestId": "QTM-001",
         "profileIdentity": profile.identity(),
@@ -379,7 +379,7 @@ pub fn native_gapped_fixture() -> TechniqueFixture {
         json!({
             "rule": rule,
             "status": "gap",
-            "owner": "quire-spec-language",
+            "owner": "filament-spec-language",
             "reason": format!("Native {rule} admission has not been accepted"),
             "limitations": [format!("No accepted {rule} observation is retained")]
         })
@@ -388,7 +388,7 @@ pub fn native_gapped_fixture() -> TechniqueFixture {
     let profile = freeze_profile(
         &json!({
             "kind": "native-formal-clause",
-            "sourceProfileRef": reference("source", "native-quire-profile"),
+            "sourceProfileRef": reference("source", "native-filament-profile"),
             "admissionResults": results
         }),
         "property-based-testing",
@@ -417,7 +417,7 @@ pub fn native_gapped_fixture() -> TechniqueFixture {
     manifest["gaps"] = json!([{
         "gapId": "native-admission-gap",
         "obligationId": "syntax-property",
-        "owner": "quire-spec-language",
+        "owner": "filament-spec-language",
         "reason": "The formal property is blocked by native-profile admission",
         "limitations": ["All carried admission rules lack affirmative evidence"],
         "admissionRules": rules

@@ -1,9 +1,9 @@
-# quire-verification
+# filament-verification
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://discord.gg/k8DVhuYBR2)
-[![Quire](https://img.shields.io/badge/Quire-Specification%20Language-1F6FEB)](https://github.com/agent-ix/quire-spec-language)
+[![Filament](https://img.shields.io/badge/Filament-Specification%20Language-1F6FEB)](https://github.com/agent-ix/filament-spec-language)
 
-quire-verification is a Rust crate that turns a requirement into an explicit
+filament-verification is a Rust crate that turns a requirement into an explicit
 verification plan: which techniques apply, which tool capability could run each
 one, and what is still missing.
 
@@ -15,7 +15,7 @@ results for the crate to assess.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/hero-dark.svg">
-  <img alt="Quoin's method catalog and its advice for a requirement supply the techniques that apply. quire-verification combines them with tool capabilities and a selection policy into a verification plan whose tasks are ready, blocked or unsupported. A native producer runs the ready tasks, and the technique results come back to be assessed for scope and freshness. Quoin keeps the evidence and a person decides whether it is enough." src="docs/images/hero-light.svg">
+  <img alt="Quoin's method catalog and its advice for a requirement supply the techniques that apply. filament-verification combines them with tool capabilities and a selection policy into a verification plan whose tasks are ready, blocked or unsupported. A native producer runs the ready tasks, and the technique results come back to be assessed for scope and freshness. Quoin keeps the evidence and a person decides whether it is enough." src="docs/images/hero-light.svg">
 </picture>
 
 ## Getting started
@@ -24,21 +24,21 @@ Add the crate as a Git dependency (Rust 1.98.1 or newer):
 
 ```toml
 [dependencies]
-quire-verification = { git = "https://github.com/agent-ix/quire-verification" }
+filament-verification = { git = "https://github.com/agent-ix/filament-verification" }
 ```
 
 Or build from a clone:
 
 ```sh
-git clone https://github.com/agent-ix/quire-verification
-cd quire-verification
+git clone https://github.com/agent-ix/filament-verification
+cd filament-verification
 cargo build --locked
 ```
 
 ## The five contracts
 
 All five are defined in [`contracts/e02-draft-2.schema.json`](contracts/e02-draft-2.schema.json)
-and validated through the public `quire-verification-contracts` crate.
+and validated through the public `filament-verification-contracts` crate.
 
 | Contract | What it says |
 |---|---|
@@ -78,9 +78,9 @@ shared references; the caller validates them and passes the validated set
 along:
 
 ```rust
-use quire_verification::catalog::adapt_quoin_catalog;
-use quire_verification::evidence::assess_evidence;
-use quire_verification::planner::build_verification_plan;
+use filament_verification::catalog::adapt_quoin_catalog;
+use filament_verification::evidence::assess_evidence;
+use filament_verification::planner::build_verification_plan;
 
 // Quoin's catalog export -> the crate's technique definitions
 let techniques = adapt_quoin_catalog(&catalog_export)?;
@@ -123,16 +123,16 @@ independent, shared, derived or unknown. Further reading:
 [contract packet](contracts/README.md) and the
 [historical evaluation report](docs/evaluation-report.md).
 
-## Quire ecosystem
+## Filament ecosystem
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/ecosystem-dark.svg">
-  <img alt="The Quire repositories. The main chain runs from the standard, quire-specification, to the compiler, quire-spec-language, then quire-contract-ir, quire-contract-codegen and quire-contract-runtime. quire-spec-language also feeds quire-protocol, and quire-contract-ir feeds quire-analyze. quire-observation feeds quire-protocol and quire-mltl. Above the chain, quire-driver runs it, quire-integration tests it and quire-verification plans verification. quire-eval evaluates checked terms. Below it, shared libraries used throughout: quire-eval, quire-exact, quire-semantic-value, quire-walk, quire-canonical and quire-verification-contracts." src="docs/images/ecosystem-light.svg">
+  <img alt="The Filament repositories. The main chain runs from the standard, filament-specification, to the compiler, filament-spec-language, then filament-contract-ir, filament-contract-codegen and filament-contract-runtime. filament-spec-language also feeds filament-protocol, and filament-contract-ir feeds filament-analyze. filament-observation feeds filament-protocol and filament-mltl. Above the chain, filament-driver runs it, filament-integration tests it and filament-verification plans verification. filament-eval evaluates checked terms. Below it, shared libraries used throughout: filament-eval, filament-exact, filament-semantic-value, filament-walk, quire-canonical and filament-verification-contracts." src="docs/images/ecosystem-light.svg">
 </picture>
 
-quire-verification sits above the main chain. It depends on
-`quire-verification-contracts` (the schema and canonicalization boundary),
-`quire-analyze` (method contract) and `engineering-assurance` (native
+filament-verification sits above the main chain. It depends on
+`filament-verification-contracts` (the schema and canonicalization boundary),
+`filament-analyze` (method contract) and `engineering-assurance` (native
 execution and evidence), all from `Cargo.toml`. Quoin supplies the catalog and
 advice across a versioned JSON boundary and keeps its own orchestration.
 

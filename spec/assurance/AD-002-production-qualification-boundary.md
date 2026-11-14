@@ -1,27 +1,27 @@
 ---
 id: AD-002
-title: Quire-spec production qualification boundary
+title: FSL production qualification boundary
 type: ArchitectureDescription
 status: proposed
 owner: agent-ix-architecture-owner
-system: quire-verification qualification campaign
+system: filament-verification qualification campaign
 relationships:
-  - target: ix://agent-ix/quire-verification/StR-002
+  - target: ix://agent-ix/filament-verification/StR-002
     type: realizes
-  - target: ix://agent-ix/quire-verification/FR-022
+  - target: ix://agent-ix/filament-verification/FR-022
     type: realizes
-  - target: ix://agent-ix/quire-verification/FR-026
+  - target: ix://agent-ix/filament-verification/FR-026
     type: realizes
-  - target: ix://agent-ix/quire-verification/NFR-007
+  - target: ix://agent-ix/filament-verification/NFR-007
     type: references
-  - target: ix://agent-ix/quire-verification/NFR-008
+  - target: ix://agent-ix/filament-verification/NFR-008
     type: references
 ---
-# Quire-spec production qualification boundary
+# FSL production qualification boundary
 
 ## System Boundary
 
-`quire-verification` owns the qualification profile, corpus/oracle manifests,
+`filament-verification` owns the qualification profile, corpus/oracle manifests,
 portable plan and result contracts, deterministic contract validation and assessment,
 claim checks, and report-core assembly. Agent A-owned repositories own shared
 identity/version schemas and the parser/compiler. Rust Engineering Assurance owns the

@@ -3,7 +3,7 @@ id: TC-033
 title: "Retain correlated and unknown oracle dependence"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-017"
+  - target: "ix://agent-ix/filament-verification/FR-017"
     type: verifies
 ---
 # TC-033: Retain Correlated and Unknown Oracle Dependence

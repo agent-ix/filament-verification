@@ -3,7 +3,7 @@ id: TC-002
 title: "Reject contradictory results and malformed planner tasks"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "verifies"
 ---
 # TC-002: Reject contradictory results and malformed planner tasks

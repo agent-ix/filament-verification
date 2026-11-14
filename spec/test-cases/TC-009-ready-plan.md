@@ -3,7 +3,7 @@ id: TC-009
 title: "Build ready tasks across distinct input kinds"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "verifies"
 ---
 # TC-009: Build ready tasks across distinct input kinds

@@ -4,7 +4,7 @@ title: "Reproduce every qualification identity and result"
 type: NFR
 quality_attribute: reliability
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-027"
+  - target: "ix://agent-ix/filament-verification/FR-027"
     type: "constrains"
 ---
 # NFR-008: Reproduce every qualification identity and result

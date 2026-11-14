@@ -3,7 +3,7 @@ id: FR-001
 title: "Validate the five public contracts"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: "implements"
 ---
 # FR-001: Validate the five public contracts
@@ -28,7 +28,7 @@ When a public contract value enters the compatibility slice, the contract valida
 | FR-001-AC-2 | Given an internal inventory object that is not one of the five public contracts, root contract validation rejects it. | Test (TC-001) |
 | FR-001-AC-3 | Given a result whose execution did not complete but whose logical outcome claims satisfied or violated, validation rejects it. | Test (TC-002) |
 | FR-001-AC-4 | Given a plan task with a missing required field, an unknown field, or a wrongly typed field, validation rejects it. | Test (TC-002) |
-| FR-001-AC-5 | Given a structured boundary value whose `contractVersion` is not `quire-verification/e02-draft-2`, including the former draft-1 value, validation rejects it without compatibility inference or fallback. | Test (TC-002) |
+| FR-001-AC-5 | Given a structured boundary value whose `contractVersion` is not `filament-verification/e02-draft-2`, including the former draft-1 value, validation rejects it without compatibility inference or fallback. | Test (TC-002) |
 
 ## Dependencies
 

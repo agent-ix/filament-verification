@@ -2,9 +2,9 @@
 
 //! Fuzz target for strict shared-reference JSON ingestion.
 
+use filament_verification::shared_reference::parse_strict_bounded_json;
 use ix_trace_rs::trace;
 use libfuzzer_sys::fuzz_target;
-use quire_verification::shared_reference::parse_strict_bounded_json;
 
 /// The strict shared-reference reader refuses arbitrary bytes without panicking.
 ///

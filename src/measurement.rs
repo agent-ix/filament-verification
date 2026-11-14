@@ -94,7 +94,7 @@ pub fn record_measurement_series(
     validate_observation_sequence(observations)?;
     let summaries = recompute_summaries(observations)?;
     let series = json!({
-        "schemaVersion": "quire-verification.vp04-measurements/v1",
+        "schemaVersion": "filament-verification.vp04-measurements/v1",
         "candidateIdentity": candidate_identity,
         "environmentIdentity": environment_identity,
         "observations": observations,

@@ -94,7 +94,7 @@ pub fn render_fixture_packet(
     let references = validate_fixture_planning_references(plan_request)?;
     let evidence_references = validate_fixture_result_references(results)?;
     Ok(json!({
-        "schemaVersion": "quire-verification/e02-evidence-packet/v1",
+        "schemaVersion": "filament-verification/e02-evidence-packet/v1",
         "claimLimit": "Fixture planning and intake only; no represented external verification or fault tool executed.",
         "plan": build_verification_plan(plan_request, &references)?,
         "assessment": assess_evidence(results, &evidence_references)?,

@@ -5,17 +5,17 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use ix_trace_rs::trace;
-use quire_verification::qualification_corpus::{
+use filament_verification::qualification_corpus::{
     QualificationCorpusOutcome, qualify_corpus_manifest,
 };
-use quire_verification::qualification_profile::{
+use filament_verification::qualification_profile::{
     FrozenQualificationProfile, QualificationProfileOutcome, freeze_qualification_profile,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
@@ -34,7 +34,7 @@ fn artifact(kind: &str, identity: &str, bytes: &[u8]) -> Value {
             "identity": identity,
             "revision": {"namespace": "qualification-corpus", "value": "r1"},
             "digest": digest(bytes),
-            "wire": {"identity": "quire-verification.qualification-corpus/v1", "version": "1"}
+            "wire": {"identity": "filament-verification.qualification-corpus/v1", "version": "1"}
         }
     })
 }
@@ -63,8 +63,8 @@ fn profile() -> Value {
         })
     };
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-profile/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-profile/v1",
         "kind": "QualificationProfile",
         "profileId": "QP-CORPUS-001",
         "profileRevision": "1",
@@ -78,7 +78,7 @@ fn profile() -> Value {
             "workingDirectoryRef": reference("environment", "workspace"),
             "inputBinding": "replace the corpus path",
             "expectedExitCodes": [0, 1],
-            "responseKind": "quire-spec.syntax-cli/v1"
+            "responseKind": "fsl.syntax-cli/v1"
         }],
         "inputPopulation": {
             "populationId": "POP-CORPUS-001",
@@ -151,7 +151,7 @@ fn proofs(value: &Value, bytes: &BTreeMap<String, Vec<u8>>) -> Vec<ValidatedShar
     collect_artifacts(value, &mut envelopes);
     let support = || ReferenceSupport {
         wire_versions: BTreeMap::from([(
-            "quire-verification.qualification-corpus/v1".to_owned(),
+            "filament-verification.qualification-corpus/v1".to_owned(),
             BTreeSet::from(["1".to_owned()]),
         )]),
         ..ReferenceSupport::default()
@@ -246,11 +246,11 @@ fn frozen_profile() -> Box<FrozenQualificationProfile> {
 
 fn replay_run(entry_id: &str, lineage: &Value, output: &[u8]) -> Vec<u8> {
     serde_json::to_vec(&json!({
-        "schemaVersion": "quire-verification.qualification-corpus-replay/v1",
+        "schemaVersion": "filament-verification.qualification-corpus-replay/v1",
         "kind": "QualificationCorpusReplayRun",
         "status": "completed",
         "entryId": entry_id,
-        "lineageIdentity": quire_verification::contracts::jcs_sha256(lineage)
+        "lineageIdentity": filament_verification::contracts::jcs_sha256(lineage)
             .expect("lineage identity"),
         "outputDigest": digest(output)
     }))
@@ -323,8 +323,8 @@ fn corpus() -> (Value, BTreeMap<String, Vec<u8>>) {
         })
     };
     let manifest = json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-corpus/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-corpus/v1",
         "kind": "QualificationCorpusManifest",
         "manifestId": "QCM-001",
         "manifestRevision": "1",

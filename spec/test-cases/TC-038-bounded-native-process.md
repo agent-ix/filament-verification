@@ -3,7 +3,7 @@ id: TC-038
 title: "Bound native parser process execution"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/NFR-006"
+  - target: "ix://agent-ix/filament-verification/NFR-006"
     type: "verifies"
 ---
 # TC-038: Bound native parser process execution

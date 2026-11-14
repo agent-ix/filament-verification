@@ -13,9 +13,9 @@ use sha2::{Digest, Sha256};
 use crate::contracts::{VerificationError, VerificationErrorCode, jcs_sha256};
 
 /// Exact relational request contract implemented by this provider.
-pub const RELATIONAL_REQUEST_VERSION: &str = "quire.relational-request/v1";
+pub const RELATIONAL_REQUEST_VERSION: &str = "filament.relational-request/v1";
 /// Exact relational result contract emitted by this provider.
-pub const RELATIONAL_RESULT_VERSION: &str = "quire.relational-result/v1";
+pub const RELATIONAL_RESULT_VERSION: &str = "filament.relational-result/v1";
 
 /// Exact trace identity. Display names are never used for correlation.
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd, Serialize)]

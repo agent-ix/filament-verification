@@ -3,15 +3,15 @@ id: FR-017
 title: "Retain oracle dependence without aggregation"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: implements
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: depends_on
-  - target: "ix://agent-ix/quire-specification/FS05"
+  - target: "ix://agent-ix/filament-specification/FS05"
     type: depends_on
 ---
 # FR-017: Retain Oracle Dependence Without Aggregation

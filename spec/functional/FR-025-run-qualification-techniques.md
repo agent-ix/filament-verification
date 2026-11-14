@@ -3,15 +3,15 @@ id: FR-025
 title: "Produce discriminating qualification results"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-004"
+  - target: "ix://agent-ix/filament-verification/US-004"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-023"
+  - target: "ix://agent-ix/filament-verification/FR-023"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-024"
+  - target: "ix://agent-ix/filament-verification/FR-024"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-017"
+  - target: "ix://agent-ix/filament-verification/FR-017"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/NFR-005"
+  - target: "ix://agent-ix/filament-verification/NFR-005"
     type: "depends_on"
   - target: "ix://agent-ix/engineering-assurance/FR-014"
     type: "depends_on"
@@ -122,7 +122,7 @@ pass.
 - Differential work SHALL remain blocked until `agent-ix/spec-artifacts-process#86`
   publishes an accepted catalog revision containing that method.
 - For a formal-clause guarantee, the planner SHALL require the frozen profile to bind the
-  exact accepted native Quire source-profile identity and admission evidence for numeric
+  exact accepted native Filament source-profile identity and admission evidence for numeric
   semantics, presence/null/invalid semantics, containment/references, collections,
   calls/results, source authority, evaluation instants, the recorded reference-design
   gate, the temporal boundary, and the runtime-dependency boundary.
@@ -181,7 +181,7 @@ pass.
   an unclassified producer result SHALL NOT satisfy the mutant obligation.
 - First-party property, generator, transform, shrinker, comparator, mutator, assertion,
   and result-adapter logic SHALL be Rust and traced with bare `ix-trace-rs` attributes.
-- `quire-verification` SHALL produce pure deterministic case, shrink, and comparison
+- `filament-verification` SHALL produce pure deterministic case, shrink, and comparison
   decisions. It SHALL NOT spawn a candidate or tool process, interpret arbitrary stdout,
   create a qualification evidence store, or copy Engineering Assurance execution logic.
 - The caller SHALL submit each exact request through the accepted Rust Engineering
@@ -254,6 +254,6 @@ on `agent-ix/engineering-assurance#34`. Differential technique identity depends 
 `agent-ix/spec-artifacts-process#86`. Task-028 implements example, property, metamorphic,
 and differential planning plus results; Task-029 implements fuzz and mutation and is the
 single completion owner for FR-025 and TC-042. Formal-clause technique execution remains
-blocked until the profile contract binds the owner-selected native Quire source profile
+blocked until the profile contract binds the owner-selected native Filament source profile
 and accepted evidence or owned gaps for every carried-forward admission rule from the
-2026-09-09 ruling on `agent-ix/quire-contract-ir#53`.
+2026-09-09 ruling on `agent-ix/filament-contract-ir#53`.

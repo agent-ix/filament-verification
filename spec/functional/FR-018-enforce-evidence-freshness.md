@@ -3,13 +3,13 @@ id: FR-018
 title: "Enforce every evidence freshness bound"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: implements
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: depends_on
 ---
 # FR-018: Enforce Every Evidence Freshness Bound

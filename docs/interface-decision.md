@@ -1,8 +1,8 @@
 # E02 accepted cross-repository verification interface
 
 Status: accepted private cross-repository Rust interface, 2026-09-14. The accepted
-owner is `agent-ix/quire-verification`; the frozen schema and strict-reader
-interface is `quire-verification/e02-draft-2`. This acceptance
+owner is `agent-ix/filament-verification`; the frozen schema and strict-reader
+interface is `filament-verification/e02-draft-2`. This acceptance
 authorizes exact Rust consumers only. It does not publish a normative schema,
 accept a represented verification tool, or make an evidence-sufficiency
 decision.

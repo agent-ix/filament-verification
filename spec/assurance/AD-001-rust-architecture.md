@@ -4,17 +4,17 @@ title: Rust architecture for the bounded verification path
 type: ArchitectureDescription
 status: accepted
 owner: agent-ix-architecture-owner
-system: quire-verification bounded compatibility slice
+system: filament-verification bounded compatibility slice
 relationships:
-  - target: ix://agent-ix/quire-verification/StR-001
+  - target: ix://agent-ix/filament-verification/StR-001
     type: realizes
-  - target: ix://agent-ix/quire-verification/NFR-004
+  - target: ix://agent-ix/filament-verification/NFR-004
     type: realizes
-  - target: ix://agent-ix/quire-verification/NFR-005
+  - target: ix://agent-ix/filament-verification/NFR-005
     type: realizes
-  - target: ix://agent-ix/quire-verification/FR-002
+  - target: ix://agent-ix/filament-verification/FR-002
     type: references
-  - target: ix://agent-ix/quire-verification/FR-008
+  - target: ix://agent-ix/filament-verification/FR-008
     type: references
 ---
 # Rust architecture for the bounded verification path

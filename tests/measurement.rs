@@ -3,12 +3,12 @@
 
 //! VP04 measurement acceptance tests.
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::{VerificationErrorCode, wire};
-use quire_verification::measurement::{
+use filament_verification::contracts::{VerificationErrorCode, wire};
+use filament_verification::measurement::{
     MAX_ELAPSED_NANOSECONDS, measurement_observation, record_measurement_series,
     validate_measurement_series,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 
 const CANDIDATE: &str = "sha256:vp04-candidate";

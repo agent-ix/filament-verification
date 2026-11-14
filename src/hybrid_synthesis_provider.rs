@@ -6,7 +6,7 @@
 //! Governing requirements: Task-039 and IT-005-SC-04. This boundary consumes typed producer output without invoking,
 //! reinterpreting, or upgrading a candidate into a proof.
 
-pub use quire_analyze_method_contract::{
+pub use filament_analyze_method_contract::{
     AnalyzeAssumptionsIdentity, AnalyzeBoundsIdentity, AnalyzeContentIdentity,
     AnalyzeImplementationIdentity, AnalyzeMethod, AnalyzeOptionsIdentity, AnalyzeOutcome,
     AnalyzeRequestIdentity, AnalyzeResult, AnalyzeResultIdentity, AnalyzeRunIdentity,
@@ -15,7 +15,7 @@ pub use quire_analyze_method_contract::{
 
 /// Shared method-result contract accepted at this provider boundary.
 pub const ANALYZE_METHOD_RESULT_VERSION: &str =
-    quire_analyze_method_contract::METHOD_RESULT_VERSION;
+    filament_analyze_method_contract::METHOD_RESULT_VERSION;
 
 /// Outcome of consuming one producer result locally.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

@@ -3,9 +3,9 @@ id: TC-042
 title: "Run generative, metamorphic, differential, and mutation evidence"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-025"
+  - target: "ix://agent-ix/filament-verification/FR-025"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-004"
+  - target: "ix://agent-ix/filament-verification/NFR-004"
     type: "verifies"
 ---
 # TC-042: Run generative, metamorphic, differential, and mutation evidence
@@ -45,7 +45,7 @@ deterministic cases and shrinking decisions, and preserves every non-success sta
    completed satisfaction and violation results, then force unavailable, refused,
    failed, timed-out, malformed-response, containment-failure, and unsupported-method
    states separately.
-6. For a formal-clause obligation, supply the exact accepted native Quire source-profile
+6. For a formal-clause obligation, supply the exact accepted native Filament source-profile
    identity and a separate accepted-or-gap result for every carried-forward admission
    rule. Turn each result into an owned gap in turn and confirm the technique obligation
    carries the same exact rule set. Remove each result in turn. Repeat using only a

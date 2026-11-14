@@ -3,11 +3,11 @@ id: FR-007
 title: "Preserve independent result findings"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "depends_on"
 ---
 # FR-007: Preserve independent result findings

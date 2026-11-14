@@ -3,9 +3,9 @@ id: TC-012
 title: "Reject every exact evidence-binding mismatch"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-001"
+  - target: "ix://agent-ix/filament-verification/NFR-001"
     type: "verifies"
 ---
 # TC-012: Reject every exact evidence-binding mismatch

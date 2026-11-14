@@ -3,15 +3,15 @@ id: FR-016
 title: "Read shared references strictly"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: implements
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-008"
+  - target: "ix://agent-ix/filament-verification/FR-008"
     type: depends_on
-  - target: "ix://agent-ix/quire-specification/FS02"
+  - target: "ix://agent-ix/filament-specification/FS02"
     type: depends_on
-  - target: "ix://agent-ix/quire-specification/FS05"
+  - target: "ix://agent-ix/filament-specification/FS05"
     type: depends_on
 ---
 # FR-016: Read Shared References Strictly
@@ -27,7 +27,7 @@ before using the reference in planning or result identity comparison.
 - Bounded UTF-8 JSON containing either an `ix.shared-reference/2-draft`
   artifact/semantic envelope or an `ix.shared-reference/1-draft`
   source-map/migration envelope from the
-  `agent-ix/quire-specification` private data packet.
+  `agent-ix/filament-specification` private data packet.
 - Locally supplied artifact bytes, supported versions/features, and qualified canonical derivations.
 
 ## Outputs
@@ -43,7 +43,7 @@ before using the reference in planning or result identity comparison.
 | FR-016-AC-2 | A semantic reference is accepted only when its byte artifact, language, semantic-profile definition digest, duplicate-free required-feature set, and selected canonical identity are supported and internally consistent; a null semantic profile requires null language and canonical identity plus an empty feature set. | Test (TC-029) |
 | FR-016-AC-3 | Before materializing a JSON object, duplicate decoded member names, including escape-equivalent spellings, refuse as `invalid_wire`; unknown versions or required features, wrong role kinds, digest mismatch, stale references, identity-content conflict, malformed source correspondence, and ambiguous equivalence refuse with their corresponding stable code before planning or result matching. | Test (TC-029) |
 | FR-016-AC-4 | Reordered required features compare as the same set, while every other collection follows its owning contract's declared ordering or identity-key rule. | Test (TC-029) |
-| FR-016-AC-5 | The reader accepts only the selected `quire.verification.jcs` / `rfc8785-v1` / `sha256` canonical identity and exact `trace`, `fault-model`, `review-procedure`, `oracle`, `observation`, and `review-disposition` roles without placing `sha256-jcs:` semantic digests in `sha256:` byte-digest fields. | Test (TC-029, TC-031) |
+| FR-016-AC-5 | The reader accepts only the selected `filament.verification.jcs` / `rfc8785-v1` / `sha256` canonical identity and exact `trace`, `fault-model`, `review-procedure`, `oracle`, `observation`, and `review-disposition` roles without placing `sha256-jcs:` semantic digests in `sha256:` byte-digest fields. | Test (TC-029, TC-031) |
 | FR-016-AC-6 | Version 2 accepts only artifact/semantic envelopes with `ix.artifact-ref/3-draft`; retained version 1 accepts only source-map/migration envelopes under its exact schema. Draft-1 artifact/semantic evidence is not reinterpreted as current, no migration is inferred, and no fallback reader treats an unknown kind or version as supported. | Test (TC-029) |
 | FR-016-AC-7 | The independent consumer executes every upstream and B-authored positive/adverse case. | Test (TC-031) |
 

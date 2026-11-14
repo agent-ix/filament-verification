@@ -6,7 +6,7 @@
 use std::path::Path;
 use std::process::ExitCode;
 
-use quire_verification::fixtures::validate_all_fixtures;
+use filament_verification::fixtures::validate_all_fixtures;
 
 fn main() -> ExitCode {
     match validate_all_fixtures(

@@ -3,9 +3,9 @@ id: FR-020
 title: "Record reproducible portfolio effort"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-003"
+  - target: "ix://agent-ix/filament-verification/US-003"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "depends_on"
 ---
 # FR-020: Record reproducible portfolio effort

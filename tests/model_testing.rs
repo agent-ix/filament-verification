@@ -5,13 +5,13 @@
 
 use std::collections::BTreeMap;
 
-use ix_trace_rs::trace;
-use quire_verification::model_testing::{
+use filament_verification::model_testing::{
     AdmittedCase, CheckedDomain, CheckedField, CheckedModel, CheckedPredicate, FailureSignature,
     MODEL_TEST_REQUEST_VERSION, ModelCase, ModelFailureCode, ModelMethodOutcome, ModelRefusalCode,
     ModelTestRequest, ModelValue, NativeReplay, ReplayDisposition, ReplayObservation,
     ShrinkRejection, generate_model_cases, run_model_tests, shrink_counterexample,
 };
+use ix_trace_rs::trace;
 
 fn value(integer: i64) -> ModelValue {
     ModelValue::Integer(integer)
@@ -336,7 +336,7 @@ fn tc_047_refuses_unsatisfiable_domains_and_never_passes_rejected_preconditions(
     ));
 
     let mut unsupported = admitted.clone();
-    unsupported.contract_version = "quire.model-test-request/v2".to_owned();
+    unsupported.contract_version = "filament.model-test-request/v2".to_owned();
     assert!(matches!(
         run_model_tests(&unsupported, &mut SatisfyingReplay::default()),
         ModelMethodOutcome::Refused(refusal) if refusal.code == ModelRefusalCode::InvalidDomain

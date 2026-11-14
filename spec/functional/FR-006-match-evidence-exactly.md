@@ -3,11 +3,11 @@ id: FR-006
 title: "Match evidence by exact identity and execution scope"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-008"
+  - target: "ix://agent-ix/filament-verification/FR-008"
     type: "depends_on"
 ---
 # FR-006: Match evidence by exact identity and execution scope

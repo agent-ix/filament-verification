@@ -268,8 +268,8 @@ pub fn plan_qualification_case(
     }
 
     let request = json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-case-request/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-case-request/v1",
         "kind": "QualificationCaseRequest",
         "manifestIdentity": manifest.identity(),
         "configurationId": configuration_id,

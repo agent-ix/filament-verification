@@ -5,21 +5,21 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::{VerificationErrorCode, jcs_sha256};
-use quire_verification::qualification_corpus::{
+use filament_verification::contracts::{VerificationErrorCode, jcs_sha256};
+use filament_verification::qualification_corpus::{
     FrozenQualificationCorpus, QualificationCorpusOutcome, qualify_corpus_manifest,
 };
-use quire_verification::qualification_oracle::{
+use filament_verification::qualification_oracle::{
     QualificationOracleOutcome, qualify_oracle_manifest,
 };
-use quire_verification::qualification_profile::{
+use filament_verification::qualification_profile::{
     FrozenQualificationProfile, QualificationProfileOutcome, freeze_qualification_profile,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
@@ -39,7 +39,7 @@ fn artifact(kind: &str, identity: &str, bytes: &[u8]) -> Value {
             "revision": {"namespace": "qualification-oracle", "value": "r1"},
             "digest": digest(bytes),
             "wire": {
-                "identity": "quire-verification.qualification-oracle-fixture/v1",
+                "identity": "filament-verification.qualification-oracle-fixture/v1",
                 "version": "1"
             }
         }
@@ -73,8 +73,8 @@ fn profile_value() -> Value {
         })
     };
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-profile/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-profile/v1",
         "kind": "QualificationProfile",
         "profileId": "QP-ORACLE-001",
         "profileRevision": "1",
@@ -88,7 +88,7 @@ fn profile_value() -> Value {
             "workingDirectoryRef": reference("environment", "workspace"),
             "inputBinding": "replace the corpus path",
             "expectedExitCodes": [0, 1],
-            "responseKind": "quire-spec.syntax-cli/v1"
+            "responseKind": "fsl.syntax-cli/v1"
         }],
         "inputPopulation": {
             "populationId": "POP-ORACLE-001",
@@ -182,7 +182,7 @@ fn proofs(value: &Value, retained: &BTreeMap<String, Vec<u8>>) -> Vec<ValidatedS
     collect_artifacts(value, &mut envelopes);
     let mut reader = SharedReferenceReader::new(ReferenceSupport {
         wire_versions: BTreeMap::from([(
-            "quire-verification.qualification-oracle-fixture/v1".to_owned(),
+            "filament-verification.qualification-oracle-fixture/v1".to_owned(),
             BTreeSet::from(["1".to_owned()]),
         )]),
         ..ReferenceSupport::default()
@@ -249,7 +249,7 @@ fn corpus_value(profile: &FrozenQualificationProfile) -> (Value, BTreeMap<String
             "classes": [class],
             "origin": "repository",
             "provenance": {
-                "authority": "agent-ix/quire-specification",
+                "authority": "agent-ix/filament-specification",
                 "revision": "fixture-r1",
                 "path": format!("fixtures/{entry_id}.quire")
             },
@@ -264,8 +264,8 @@ fn corpus_value(profile: &FrozenQualificationProfile) -> (Value, BTreeMap<String
     };
     (
         json!({
-            "contractVersion": "quire-verification/e02-draft-2",
-            "schemaVersion": "quire-verification.qualification-corpus/v1",
+            "contractVersion": "filament-verification/e02-draft-2",
+            "schemaVersion": "filament-verification.qualification-corpus/v1",
             "kind": "QualificationCorpusManifest",
             "manifestId": "QC-ORACLE-001",
             "manifestRevision": "1",
@@ -349,8 +349,8 @@ fn manifest_value(
     corpus: &FrozenQualificationCorpus,
 ) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-oracles/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-oracles/v1",
         "kind": "QualificationOracleManifest",
         "manifestId": "QO-001",
         "profileIdentity": profile.identity(),

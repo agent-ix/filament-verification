@@ -6,7 +6,7 @@
 use std::path::Path;
 use std::process::ExitCode;
 
-use quire_verification::fixtures::{read_bounded_json, render_fixture_packet};
+use filament_verification::fixtures::{read_bounded_json, render_fixture_packet};
 
 fn main() -> ExitCode {
     match run() {

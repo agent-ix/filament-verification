@@ -6,8 +6,8 @@
 use std::path::Path;
 use std::process::ExitCode;
 
-use quire_verification::bounded_portfolio::run_bounded_portfolio;
-use quire_verification::fixtures::read_bounded_json;
+use filament_verification::bounded_portfolio::run_bounded_portfolio;
+use filament_verification::fixtures::read_bounded_json;
 
 fn main() -> ExitCode {
     match run() {

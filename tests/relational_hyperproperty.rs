@@ -5,14 +5,14 @@
 
 use std::collections::BTreeMap;
 
-use ix_trace_rs::trace;
-use quire_verification::relational_hyperproperty::{
+use filament_verification::relational_hyperproperty::{
     AlignedPosition, AlignmentKind, ComparisonOperator, OracleDependence, PopulationAssumption,
     QuantifiedTrace, Quantifier, RELATIONAL_REQUEST_VERSION, RelationalExpression,
     RelationalMethodOutcome, RelationalNonConclusionCode, RelationalRequest, RelationalValue,
     Trace, TraceAlignment, TraceAssumptionKind, TraceIdentity, TracePoint, TracePopulation,
     TraceValueRef,
 };
+use ix_trace_rs::trace;
 
 fn trace(identity: &str, local_name: &str, value: i64, class: &str) -> Trace {
     Trace {
@@ -96,10 +96,10 @@ fn request(first: Quantifier, second: Quantifier) -> RelationalRequest {
 #[trace("TC-048", "FR-030-AC-2", "IT-005")]
 #[test]
 fn tc_048_preserves_mixed_quantifier_order_and_changes_the_result() {
-    let universal_exists = quire_verification::relational_hyperproperty::evaluate_relational(
+    let universal_exists = filament_verification::relational_hyperproperty::evaluate_relational(
         &request(Quantifier::ForAll, Quantifier::Exists),
     );
-    let exists_universal = quire_verification::relational_hyperproperty::evaluate_relational(
+    let exists_universal = filament_verification::relational_hyperproperty::evaluate_relational(
         &request(Quantifier::Exists, Quantifier::ForAll),
     );
 
@@ -119,7 +119,7 @@ fn tc_048_preserves_mixed_quantifier_order_and_changes_the_result() {
 #[test]
 fn tc_048_returns_exact_paired_witnesses_and_identity_bound_assumptions() {
     let base = request(Quantifier::Exists, Quantifier::ForAll);
-    let outcome = quire_verification::relational_hyperproperty::evaluate_relational(&base);
+    let outcome = filament_verification::relational_hyperproperty::evaluate_relational(&base);
     let RelationalMethodOutcome::Proved(result) = outcome else {
         panic!("fixture must be proved");
     };
@@ -155,7 +155,7 @@ fn tc_048_returns_exact_paired_witnesses_and_identity_bound_assumptions() {
         equals: RelationalValue::Label("public".to_owned()),
     });
     let assumed_outcome =
-        quire_verification::relational_hyperproperty::evaluate_relational(&assumed);
+        filament_verification::relational_hyperproperty::evaluate_relational(&assumed);
     assert!(matches!(
         assumed_outcome,
         RelationalMethodOutcome::Proved(_)
@@ -170,7 +170,7 @@ fn tc_048_keeps_missing_closure_alignment_and_bounds_nonconclusive() {
     let mut unclosed = request(Quantifier::Exists, Quantifier::ForAll);
     unclosed.populations[0].closure_identity = None;
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&unclosed),
+        filament_verification::relational_hyperproperty::evaluate_relational(&unclosed),
         RelationalMethodOutcome::Incomplete(result)
             if result.code == RelationalNonConclusionCode::MissingPopulationClosure
     ));
@@ -178,7 +178,7 @@ fn tc_048_keeps_missing_closure_alignment_and_bounds_nonconclusive() {
     let mut missing = request(Quantifier::Exists, Quantifier::ForAll);
     missing.alignments.clear();
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&missing),
+        filament_verification::relational_hyperproperty::evaluate_relational(&missing),
         RelationalMethodOutcome::Incomplete(result)
             if result.code == RelationalNonConclusionCode::MissingAlignment
     ));
@@ -186,7 +186,7 @@ fn tc_048_keeps_missing_closure_alignment_and_bounds_nonconclusive() {
     let mut ambiguous = request(Quantifier::Exists, Quantifier::ForAll);
     ambiguous.alignments.push(alignment("trace:a", "trace:b"));
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&ambiguous),
+        filament_verification::relational_hyperproperty::evaluate_relational(&ambiguous),
         RelationalMethodOutcome::Incomplete(result)
             if result.code == RelationalNonConclusionCode::AmbiguousAlignment
     ));
@@ -194,7 +194,7 @@ fn tc_048_keeps_missing_closure_alignment_and_bounds_nonconclusive() {
     let mut bounded = request(Quantifier::Exists, Quantifier::ForAll);
     bounded.finite_assignment_bound = 1;
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&bounded),
+        filament_verification::relational_hyperproperty::evaluate_relational(&bounded),
         RelationalMethodOutcome::RequiresBound(result)
             if result.code == RelationalNonConclusionCode::AssignmentBoundExceeded
     ));
@@ -206,14 +206,14 @@ fn tc_048_keeps_missing_closure_alignment_and_bounds_nonconclusive() {
 fn tc_048_never_correlates_by_local_name_or_reuses_one_trace_identity() {
     let explicit = request(Quantifier::Exists, Quantifier::ForAll);
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&explicit),
+        filament_verification::relational_hyperproperty::evaluate_relational(&explicit),
         RelationalMethodOutcome::Proved(_)
     ));
 
     let mut local_name_only = explicit.clone();
     local_name_only.alignments = vec![alignment("same-local-name", "same-local-name")];
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&local_name_only),
+        filament_verification::relational_hyperproperty::evaluate_relational(&local_name_only),
         RelationalMethodOutcome::Incomplete(result)
             if result.code == RelationalNonConclusionCode::MissingAlignment
     ));
@@ -222,7 +222,7 @@ fn tc_048_never_correlates_by_local_name_or_reuses_one_trace_identity() {
     duplicated.populations[0].traces[1].identity =
         duplicated.populations[0].traces[0].identity.clone();
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&duplicated),
+        filament_verification::relational_hyperproperty::evaluate_relational(&duplicated),
         RelationalMethodOutcome::Refused(result)
             if result.code == RelationalNonConclusionCode::DuplicateTraceIdentity
     ));
@@ -231,7 +231,7 @@ fn tc_048_never_correlates_by_local_name_or_reuses_one_trace_identity() {
     one_trace.populations[0].traces.pop();
     one_trace.alignments.clear();
     assert!(matches!(
-        quire_verification::relational_hyperproperty::evaluate_relational(&one_trace),
+        filament_verification::relational_hyperproperty::evaluate_relational(&one_trace),
         RelationalMethodOutcome::Incomplete(result)
             if result.code == RelationalNonConclusionCode::InsufficientDistinctTraces
     ));
@@ -242,7 +242,7 @@ fn tc_048_never_correlates_by_local_name_or_reuses_one_trace_identity() {
 #[test]
 fn tc_048_preserves_dependent_oracle_classification_without_promotion() {
     let request = request(Quantifier::Exists, Quantifier::ForAll);
-    let outcome = quire_verification::relational_hyperproperty::evaluate_relational(&request);
+    let outcome = filament_verification::relational_hyperproperty::evaluate_relational(&request);
     assert_eq!(
         outcome.oracle_dependence(),
         Some(&request.oracle_dependence)

@@ -3,7 +3,7 @@ id: TC-022
 title: "Enforce the Rust qualified-path implementation"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/NFR-004"
+  - target: "ix://agent-ix/filament-verification/NFR-004"
     type: "verifies"
 ---
 # TC-022: Enforce the Rust qualified-path implementation

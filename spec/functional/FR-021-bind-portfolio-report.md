@@ -3,15 +3,15 @@ id: FR-021
 title: "Bind the portfolio report and human disposition"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/US-003"
+  - target: "ix://agent-ix/filament-verification/US-003"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-019"
+  - target: "ix://agent-ix/filament-verification/FR-019"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-020"
+  - target: "ix://agent-ix/filament-verification/FR-020"
     type: "depends_on"
 ---
 # FR-021: Bind the portfolio report and human disposition

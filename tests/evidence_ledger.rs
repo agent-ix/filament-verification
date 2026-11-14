@@ -3,8 +3,8 @@
 
 #![allow(missing_docs)]
 
+use filament_verification::evidence_ledger::*;
 use ix_trace_rs::trace;
-use quire_verification::evidence_ledger::*;
 
 struct FixtureAuthorizationVerifier;
 
@@ -42,7 +42,7 @@ fn id(kind: EvidenceKind, value: &str) -> EvidenceIdentity {
     }
 }
 fn lock() -> EvidenceIdentity {
-    id(EvidenceKind::EcosystemLock, "lock:qspec-8d0fbad")
+    id(EvidenceKind::EcosystemLock, "lock:fspec-8d0fbad")
 }
 fn vector(class: ClaimClass, state: VectorState) -> QualificationVector {
     QualificationVector {

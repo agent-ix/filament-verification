@@ -4,15 +4,15 @@ title: "Rust implementation for the qualified path"
 type: NFR
 quality_attribute: performance_efficiency
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-006"
+  - target: "ix://agent-ix/filament-verification/FR-006"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-025"
+  - target: "ix://agent-ix/filament-verification/FR-025"
     type: "constrains"
 ---
 # NFR-004: Rust implementation for the qualified path

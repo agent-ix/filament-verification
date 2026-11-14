@@ -3,9 +3,9 @@ id: TC-020
 title: "Retain pending human work and bounded claims"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-009"
+  - target: "ix://agent-ix/filament-verification/FR-009"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-003"
+  - target: "ix://agent-ix/filament-verification/NFR-003"
     type: "verifies"
 ---
 # TC-020: Retain pending human work and bounded claims

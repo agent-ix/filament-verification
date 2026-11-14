@@ -6,8 +6,7 @@
 // Integration-test fixture helpers are private and intentionally not documented.
 #![allow(missing_docs)]
 
-use ix_trace_rs::trace;
-use quire_verification::{
+use filament_verification::{
     evidence_ledger::{
         CapabilityIdentity, ClaimClass, DecisionDisposition, EvidenceEdge, EvidenceGraph,
         EvidenceIdentity, EvidenceKind, EvidenceRelation, HumanDecision, LedgerOutcome,
@@ -22,16 +21,17 @@ use quire_verification::{
         AnalyzeToolchainIdentity, ProviderConsumption, ProviderRevision, consume_analyze_result,
     },
 };
+use ix_trace_rs::trace;
 
 struct FixtureAuthorizationVerifier;
 
-impl quire_verification::evidence_ledger::DecisionAuthorizationVerifier
+impl filament_verification::evidence_ledger::DecisionAuthorizationVerifier
     for FixtureAuthorizationVerifier
 {
     fn verifies(
         &self,
         decision: &HumanDecision,
-        authorization: &quire_verification::evidence_ledger::VerifiedDecisionAuthorization,
+        authorization: &filament_verification::evidence_ledger::VerifiedDecisionAuthorization,
     ) -> bool {
         decision.identity == id(EvidenceKind::Decision, "decision:it-005")
             && authorization.attestation == id(EvidenceKind::Artifact, "authentication:it-005")
@@ -239,9 +239,9 @@ fn graph_for_passed_rows(rows: &[LedgerRow], decision: &HumanDecision) -> Eviden
         ]
         .into_iter()
         .map(
-            |identity| quire_verification::evidence_ledger::EvidenceIntake {
+            |identity| filament_verification::evidence_ledger::EvidenceIntake {
                 identity,
-                declared_digest: quire_verification::evidence_ledger::evidence_digest(
+                declared_digest: filament_verification::evidence_ledger::evidence_digest(
                     b"attested fixture",
                 ),
                 producer_bytes: b"attested fixture".to_vec(),
@@ -321,7 +321,7 @@ fn it_005_sc_06_07_keeps_all_rows_and_future_evidence_nonblocking() {
         ),
         LedgerOutcome::Incomplete {
             limitations: vec![
-                quire_verification::evidence_ledger::LimitationKind::FutureProductionEvidence
+                filament_verification::evidence_ledger::LimitationKind::FutureProductionEvidence
             ]
         }
     );
@@ -342,13 +342,13 @@ fn it_005_sc_06_07_keeps_all_rows_and_future_evidence_nonblocking() {
     ));
     let mut passed = passed_rows();
     let scope =
-        quire_verification::evidence_ledger::qualification_scope(&accepted, &lock(), &passed)
+        filament_verification::evidence_ledger::qualification_scope(&accepted, &lock(), &passed)
             .expect("fixture ledger scope fits canonical framing");
     let decision = HumanDecision {
         identity: id(EvidenceKind::Decision, "decision:it-005"),
         actor: "reviewer".into(),
         authority: "owner".into(),
-        authorization: quire_verification::evidence_ledger::VerifiedDecisionAuthorization {
+        authorization: filament_verification::evidence_ledger::VerifiedDecisionAuthorization {
             decision_identity: id(EvidenceKind::Decision, "decision:it-005"),
             actor: "reviewer".into(),
             authority: "owner".into(),

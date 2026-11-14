@@ -4,23 +4,23 @@
 //! Independent acceptance tests for the retained shared-reference packet.
 //!
 //! The retained schemas and fourteen amendment fixtures live in public crate
-//! `quire-verification-contracts` (VER-50); fixture bytes are read through its exported
+//! `filament-verification-contracts` (VER-50); fixture bytes are read through its exported
 //! `contracts::shared_reference::fixtures` constants rather than a local file, since this
 //! crate holds no copy of the packet.
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use ix_trace_rs::trace;
-use jsonschema::Draft;
-use quire_verification::contracts::shared_reference::fixtures;
-use quire_verification::contracts::{
+use filament_verification::contracts::shared_reference::fixtures;
+use filament_verification::contracts::{
     MAX_JSON_BYTES, VerificationError, VerificationErrorCode, jcs_canonicalize,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, LanguageExpectation, MigrationExpectation, ReferenceExpectation,
     ReferenceSupport, SemanticExpectation, SemanticProfileExpectation, SharedReferenceReader,
     SourceMapExpectation, parse_strict_bounded_json, validate_jcs_correspondence,
 };
+use ix_trace_rs::trace;
+use jsonschema::Draft;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
@@ -71,7 +71,7 @@ fn support() -> ReferenceSupport {
     ReferenceSupport {
         wire_versions,
         language_editions: BTreeMap::from([(
-            "quire".to_owned(),
+            "filament".to_owned(),
             ["1".to_owned(), "2".to_owned()].into_iter().collect(),
         )]),
         semantic_profile_versions: BTreeMap::from([(
@@ -416,7 +416,7 @@ fn rejects_semantic_wire_and_canonical_failures() {
     }
     let mut valid_other_domain = semantic_envelope.clone();
     valid_other_domain["value"]["canonicalIdentity"] = json!({
-        "domain": "quire.contract.canonical-json",
+        "domain": "filament.contract.canonical-json",
         "version": "v1",
         "algorithm": "sha256",
         "digest": "0000000000000000000000000000000000000000000000000000000000000000"
@@ -498,10 +498,10 @@ fn accepts_feature_set_reordering_and_coupled_nulls() {
 
 fn validates_language_and_profile_support() {
     let mut semantic = fixture("semantic.json");
-    semantic["value"]["language"] = json!({"identity": "quire", "edition": "1"});
+    semantic["value"]["language"] = json!({"identity": "filament", "edition": "1"});
     let mut expected = semantic_expectation(&semantic["value"]);
     expected.language = Some(LanguageExpectation {
-        identity: "quire".to_owned(),
+        identity: "filament".to_owned(),
         edition: "1".to_owned(),
     });
     SharedReferenceReader::new(support())

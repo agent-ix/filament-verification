@@ -3,11 +3,11 @@ id: FR-004
 title: "Adapt Quoin catalog and advice without changing meaning"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-003"
+  - target: "ix://agent-ix/filament-verification/US-003"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-002"
+  - target: "ix://agent-ix/filament-verification/FR-002"
     type: "depends_on"
 ---
 # FR-004: Adapt Quoin catalog and advice without changing meaning

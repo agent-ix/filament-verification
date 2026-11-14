@@ -3,7 +3,7 @@ id: TC-039
 title: "Freeze and reject qualification profiles"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-022"
+  - target: "ix://agent-ix/filament-verification/FR-022"
     type: "verifies"
 ---
 # TC-039: Freeze and reject qualification profiles

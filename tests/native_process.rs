@@ -10,12 +10,12 @@ use std::fs;
 use std::os::unix::fs::symlink;
 use std::path::{Path, PathBuf};
 
-use ix_trace_rs::trace;
-use quire_verification::contracts::VerificationErrorCode;
-use quire_verification::native_process::{
+use filament_verification::contracts::VerificationErrorCode;
+use filament_verification::native_process::{
     MAX_NATIVE_DEADLINE_SECONDS, MAX_NATIVE_OUTPUT_BYTES, NativeProcessExecutor,
     NativeProcessRequest, parse_native_json_output,
 };
+use ix_trace_rs::trace;
 use serde_json::Value;
 use tempfile::TempDir;
 
@@ -29,7 +29,7 @@ impl Candidate {
         let built_fixture = Path::new(env!("CARGO_BIN_EXE_native-process-fixture"));
         let fixture_directory = built_fixture.parent().expect("fixture build directory");
         let root = tempfile::Builder::new()
-            .prefix("quire-verification-native-process-")
+            .prefix("filament-verification-native-process-")
             .tempdir_in(fixture_directory)
             .expect("candidate root beside completed Cargo fixture");
         let executable = root.path().join("native-process-fixture");
@@ -163,7 +163,7 @@ fn tc_038_pins_the_admitted_descriptor_and_refuses_path_escape() {
         .parent()
         .expect("candidate root parent");
     let relative_root_parent = tempfile::Builder::new()
-        .prefix("quire-verification-linked-root-")
+        .prefix("filament-verification-linked-root-")
         .tempdir_in(root_parent)
         .expect("relative linked-root parent");
     let relative_root_link = relative_root_parent.path().join("linked-root");

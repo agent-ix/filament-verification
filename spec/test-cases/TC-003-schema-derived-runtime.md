@@ -3,9 +3,9 @@ id: TC-003
 title: "Inspect and test schema-derived runtime definitions"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-002"
+  - target: "ix://agent-ix/filament-verification/FR-002"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-002"
+  - target: "ix://agent-ix/filament-verification/NFR-002"
     type: "verifies"
 ---
 # TC-003: Inspect and test schema-derived runtime definitions

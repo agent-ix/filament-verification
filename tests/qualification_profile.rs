@@ -5,14 +5,14 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use ix_trace_rs::trace;
-use quire_verification::qualification_profile::{
+use filament_verification::qualification_profile::{
     QualificationProfileOutcome, freeze_qualification_profile, validate_qualification_profile,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 
@@ -26,12 +26,12 @@ fn artifact(kind: &str, identity: &str) -> Value {
             "authority": "qualification.agent-ix.local",
             "identity": identity,
             "revision": {
-                "namespace": "quire-spec-production-profile",
+                "namespace": "fsl-production-profile",
                 "value": "accepted-r1"
             },
             "digest": format!("sha256:{:x}", Sha256::digest(identity.as_bytes())),
             "wire": {
-                "identity": "quire-verification.qualification-profile/v1",
+                "identity": "filament-verification.qualification-profile/v1",
                 "version": "1"
             }
         }
@@ -43,7 +43,7 @@ fn validated_references(profile: &Value) -> Vec<ValidatedSharedReference> {
     collect_artifacts(profile, &mut envelopes);
     let support = ReferenceSupport {
         wire_versions: BTreeMap::from([(
-            "quire-verification.qualification-profile/v1".to_owned(),
+            "filament-verification.qualification-profile/v1".to_owned(),
             BTreeSet::from(["1".to_owned()]),
         )]),
         ..ReferenceSupport::default()
@@ -166,25 +166,25 @@ fn export_claim_authority() -> Value {
 
 fn profile() -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-profile/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-profile/v1",
         "kind": "QualificationProfile",
-        "profileId": "QP-QUIRE-SPEC-SYNTAX-001",
+        "profileId": "QP-FSL-SYNTAX-001",
         "profileRevision": "1",
-        "candidateRef": artifact("executable-projection", "quire-spec:binary"),
-        "dependencyClosureRef": artifact("dependency-closure", "quire-spec:lockfile"),
-        "productionCallerRef": artifact("invocation", "quire-spec:direct-cli-caller"),
+        "candidateRef": artifact("executable-projection", "fsl:binary"),
+        "dependencyClosureRef": artifact("dependency-closure", "fsl:lockfile"),
+        "productionCallerRef": artifact("invocation", "fsl:direct-cli-caller"),
         "commands": [{
             "commandId": "parse",
-            "executableRef": artifact("executable-projection", "quire-spec:binary"),
+            "executableRef": artifact("executable-projection", "fsl:binary"),
             "arguments": ["parse", "profile:source", "source-r1", "<corpus-item-path>"],
-            "workingDirectoryRef": artifact("environment", "quire-spec:workspace"),
+            "workingDirectoryRef": artifact("environment", "fsl:workspace"),
             "inputBinding": "replace <corpus-item-path> with the retained corpus path",
             "expectedExitCodes": [0, 1, 2, 3],
-            "responseKind": "quire-spec.syntax-cli/v1"
+            "responseKind": "fsl.syntax-cli/v1"
         }],
         "inputPopulation": {
-            "populationId": "QUIRE-SPEC-SYNTAX-POPULATION-001",
+            "populationId": "FSL-SYNTAX-POPULATION-001",
             "description": "Selected production syntax inputs",
             "requiredClasses": ["valid", "malformed", "boundary", "mutation"],
             "selectionRationale": "Cover every declared syntax and refusal class in the profile"
@@ -219,9 +219,9 @@ fn profile() -> Value {
             "No model binding, type checking, evaluation, backend, or unlisted environment claim"
         ],
         "interfaces": [
-            interface("e02", "portable-contracts", "agent-ix/quire-verification"),
-            interface("fs02-fs05", "shared-references", "agent-ix/quire-specification"),
-            interface("compiler", "parser-compiler", "agent-ix/quire-spec-language"),
+            interface("e02", "portable-contracts", "agent-ix/filament-verification"),
+            interface("fs02-fs05", "shared-references", "agent-ix/filament-specification"),
+            interface("compiler", "parser-compiler", "agent-ix/filament-spec-language"),
             interface("caller", "production-caller", "verification-owner"),
             interface("assurance", "engineering-assurance", "agent-ix/engineering-assurance"),
             interface("evidence", "quoin-evidence", "agent-ix/quoin")
@@ -290,7 +290,7 @@ fn assert_required_dimensions_are_closed(original: &Value) {
 
 fn assert_profile_identities_are_unique() {
     for (collection, changed_field, replacement) in [
-        ("commands", "responseKind", json!("quire-spec.other/v1")),
+        ("commands", "responseKind", json!("fsl.other/v1")),
         (
             "semanticGuarantees",
             "claim",
@@ -475,7 +475,7 @@ fn tc_039_closes_nonformal_native_and_export_claim_authorities() {
     gapped["semanticGuarantees"][0]["claimAuthority"]["admissionResults"][0] = json!({
         "rule": "numeric-domain",
         "status": "gap",
-        "owner": "quire-spec-language",
+        "owner": "filament-spec-language",
         "reason": "The native numeric profile has not yet been admitted",
         "limitations": ["No accepted bounded-rational evidence is retained"]
     });
@@ -595,7 +595,7 @@ fn tc_039_returns_sorted_owned_blockers_without_a_local_substitute() {
     assert_eq!(blockers[0].owner(), "agent-ix/engineering-assurance");
     assert_eq!(blockers[0].status(), "missing");
     assert_eq!(blockers[1].interface_id(), "compiler");
-    assert_eq!(blockers[1].owner(), "agent-ix/quire-spec-language");
+    assert_eq!(blockers[1].owner(), "agent-ix/filament-spec-language");
     assert_eq!(blockers[1].status(), "provisional");
 
     let mut invalid = profile();

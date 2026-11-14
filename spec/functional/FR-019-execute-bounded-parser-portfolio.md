@@ -3,21 +3,21 @@ id: FR-019
 title: "Execute a bounded native parser portfolio"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/US-003"
+  - target: "ix://agent-ix/filament-verification/US-003"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-014"
+  - target: "ix://agent-ix/filament-verification/FR-014"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-015"
+  - target: "ix://agent-ix/filament-verification/FR-015"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-017"
+  - target: "ix://agent-ix/filament-verification/FR-017"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-018"
+  - target: "ix://agent-ix/filament-verification/FR-018"
     type: "depends_on"
 ---
 # FR-019: Execute a bounded native parser portfolio
@@ -31,7 +31,7 @@ disposition task over the same admitted subject and execution scope.
 
 ## Inputs
 
-- An exact reviewed `quire-spec-language` Rust candidate and `quire-spec` CLI binding.
+- An exact reviewed `filament-spec-language` Rust candidate and `fsl` CLI binding.
 - A valid native source, one syntax-defect mutation derived from it, and their exact references.
 - Expected source SHA-256 digests, clause and import counts, and the exact
   invalid-syntax diagnostic span selected before execution.

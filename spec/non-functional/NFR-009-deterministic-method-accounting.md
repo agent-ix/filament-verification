@@ -4,11 +4,11 @@ title: "Deterministic bounded method and ledger accounting"
 type: NFR
 quality_attribute: reliability
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-029"
+  - target: "ix://agent-ix/filament-verification/FR-029"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-031"
+  - target: "ix://agent-ix/filament-verification/FR-031"
     type: "constrains"
-  - target: "ix://agent-ix/quire-verification/FR-034"
+  - target: "ix://agent-ix/filament-verification/FR-034"
     type: "constrains"
 ---
 # NFR-009: Deterministic bounded method and ledger accounting

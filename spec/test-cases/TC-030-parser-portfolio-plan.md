@@ -3,11 +3,11 @@ id: TC-030
 title: "Build a heterogeneous parser portfolio plan"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-013"
+  - target: "ix://agent-ix/filament-verification/FR-013"
     type: verifies
-  - target: "ix://agent-ix/quire-verification/FR-014"
+  - target: "ix://agent-ix/filament-verification/FR-014"
     type: verifies
-  - target: "ix://agent-ix/quire-verification/FR-015"
+  - target: "ix://agent-ix/filament-verification/FR-015"
     type: verifies
 ---
 # TC-030: Build a Heterogeneous Parser Portfolio Plan

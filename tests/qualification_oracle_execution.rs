@@ -16,28 +16,28 @@ use engineering_assurance::producer_execution::{
     PRODUCER_EXECUTION_REQUEST_PROTOCOL, ProducerDescriptor, ProducerExecutionRequest,
     ProducerExecutionState, ProducerExecutor, StdinBinding,
 };
-use ix_trace_rs::trace;
-use quire_verification::contracts::{VerificationErrorCode, jcs_canonicalize, jcs_sha256, wire};
-use quire_verification::qualification_corpus::{
+use filament_verification::contracts::{VerificationErrorCode, jcs_canonicalize, jcs_sha256, wire};
+use filament_verification::qualification_corpus::{
     FrozenQualificationCorpus, QualificationCorpusOutcome, qualify_corpus_manifest,
 };
-use quire_verification::qualification_oracle::{
+use filament_verification::qualification_oracle::{
     FrozenQualificationOracleManifest, QualificationOracleOutcome, qualify_oracle_manifest,
 };
-use quire_verification::qualification_oracle_execution::{
+use filament_verification::qualification_oracle_execution::{
     QualificationComparisonAssessment, QualificationExecutionEvidence,
     execute_qualification_comparison, execute_qualification_oracle,
     qualification_comparison_response_binding, qualification_oracle_response_binding,
     record_qualification_comparison_execution, record_qualification_disagreement,
     record_qualification_oracle_execution,
 };
-use quire_verification::qualification_profile::{
+use filament_verification::qualification_profile::{
     FrozenQualificationProfile, QualificationProfileOutcome, freeze_qualification_profile,
 };
-use quire_verification::shared_reference::{
+use filament_verification::shared_reference::{
     ArtifactExpectation, ReferenceExpectation, ReferenceSupport, SharedReferenceReader,
     ValidatedSharedReference,
 };
+use ix_trace_rs::trace;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use tempfile::TempDir;
@@ -89,7 +89,7 @@ fn artifact_with_revision(kind: &str, identity: &str, revision: &str, bytes: &[u
             "revision": {"namespace": "qualification-oracle", "value": revision},
             "digest": digest(bytes),
             "wire": {
-                "identity": "quire-verification.qualification-oracle-fixture/v1",
+                "identity": "filament-verification.qualification-oracle-fixture/v1",
                 "version": "1"
             }
         }
@@ -131,7 +131,7 @@ fn proofs(value: &Value, retained: &BTreeMap<String, Vec<u8>>) -> Vec<ValidatedS
     collect_artifacts(value, &mut envelopes);
     let mut reader = SharedReferenceReader::new(ReferenceSupport {
         wire_versions: BTreeMap::from([(
-            "quire-verification.qualification-oracle-fixture/v1".to_owned(),
+            "filament-verification.qualification-oracle-fixture/v1".to_owned(),
             BTreeSet::from(["1".to_owned()]),
         )]),
         ..ReferenceSupport::default()
@@ -202,8 +202,8 @@ fn profile_value() -> Value {
         })
     };
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-profile/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-profile/v1",
         "kind": "QualificationProfile",
         "profileId": "QP-EA-CONSUMER-001",
         "profileRevision": "1",
@@ -217,7 +217,7 @@ fn profile_value() -> Value {
             "workingDirectoryRef": reference("environment", "workspace"),
             "inputBinding": "replace the corpus path",
             "expectedExitCodes": [0, 1],
-            "responseKind": "quire-spec.syntax-cli/v1"
+            "responseKind": "fsl.syntax-cli/v1"
         }],
         "inputPopulation": {
             "populationId": "POP-EA-CONSUMER-001",
@@ -295,7 +295,7 @@ fn corpus_value(profile: &FrozenQualificationProfile) -> (Value, BTreeMap<String
             "artifactRef": artifact("source", identity, bytes),
             "classes": [class], "origin": "repository",
             "provenance": {
-                "authority": "agent-ix/quire-specification", "revision": "fixture-r1",
+                "authority": "agent-ix/filament-specification", "revision": "fixture-r1",
                 "path": format!("fixtures/{entry_id}.quire")
             },
             "rights": {
@@ -307,8 +307,8 @@ fn corpus_value(profile: &FrozenQualificationProfile) -> (Value, BTreeMap<String
     };
     (
         json!({
-            "contractVersion": "quire-verification/e02-draft-2",
-            "schemaVersion": "quire-verification.qualification-corpus/v1",
+            "contractVersion": "filament-verification/e02-draft-2",
+            "schemaVersion": "filament-verification.qualification-corpus/v1",
             "kind": "QualificationCorpusManifest", "manifestId": "QC-EA-CONSUMER-001",
             "manifestRevision": "1", "profileIdentity": profile.identity(),
             "populationId": "POP-EA-CONSUMER-001", "requiredClasses": ["malformed", "valid"],
@@ -423,7 +423,7 @@ fn request(
     };
     let cancellation = if matches!(mode, ProducerMode::Cancelled) {
         CancellationBinding::Event {
-            authority: "quire-verification-test".to_owned(),
+            authority: "filament-verification-test".to_owned(),
             event_id: "cancel-before-launch".to_owned(),
         }
     } else {
@@ -445,7 +445,7 @@ fn request(
             executable: selected_executable.display().to_string(),
             executable_digest: ContentDigest::of_bytes(&executable_bytes),
         },
-        caller: contract("quire-verification.qualification-oracle-request"),
+        caller: contract("filament-verification.qualification-oracle-request"),
         procedure: ExecutionProcedure::Direct,
         capability_root: fs::canonicalize(root)
             .expect("canonical root")
@@ -491,8 +491,8 @@ fn request(
 
 fn oracle_response(observation_ref: &Value) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-oracle-response/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-oracle-response/v1",
         "kind": "QualificationOracleProducerResponse",
         "bindingId": "binding-ea", "guaranteeId": "syntax-outcome",
         "inputProjection": {"mode": "ordered-batch", "entryIds": ["malformed", "valid"]},
@@ -502,8 +502,8 @@ fn oracle_response(observation_ref: &Value) -> Value {
 
 fn comparison_response(candidate_ref: &Value, oracle_ref: &Value, outcome: &str) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-comparison-response/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-comparison-response/v1",
         "kind": "QualificationComparisonProducerResponse",
         "bindingId": "binding-ea", "guaranteeId": "syntax-outcome",
         "inputProjection": {"mode": "ordered-batch", "entryIds": ["malformed", "valid"]},
@@ -550,8 +550,8 @@ fn manifest_value(
     request_bytes: &[u8],
 ) -> Value {
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-oracles/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-oracles/v1",
         "kind": "QualificationOracleManifest", "manifestId": "QO-EA-CONSUMER-001",
         "profileIdentity": profile.identity(), "corpusIdentity": corpus.identity(),
         "bindings": [binding(executable_bytes, request_bytes)],
@@ -773,8 +773,8 @@ fn disagreement_response(
 ) -> Value {
     let comparison_value = serde_json::to_value(comparison).expect("comparison JSON");
     json!({
-        "contractVersion": "quire-verification/e02-draft-2",
-        "schemaVersion": "quire-verification.qualification-disagreement-response/v1",
+        "contractVersion": "filament-verification/e02-draft-2",
+        "schemaVersion": "filament-verification.qualification-disagreement-response/v1",
         "kind": "QualificationDisagreementProcedureResponse",
         "bindingId": "binding-ea",
         "comparisonIdentity": jcs_sha256(&comparison_value).expect("comparison identity"),
@@ -791,7 +791,7 @@ fn record_disagreement(
     identity: &str,
 ) -> Result<
     wire::QualificationOracleDisagreementRecord,
-    quire_verification::contracts::VerificationError,
+    filament_verification::contracts::VerificationError,
 > {
     let response_bytes = jcs_canonicalize(response).expect("canonical disagreement response");
     let result_ref = artifact("run-artifact", identity, &response_bytes);

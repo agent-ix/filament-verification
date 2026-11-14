@@ -3,7 +3,7 @@ id: FR-008
 title: "Canonicalize digest and identity inputs with JCS"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-002"
+  - target: "ix://agent-ix/filament-verification/US-002"
     type: "implements"
 ---
 # FR-008: Canonicalize digest and identity inputs with JCS

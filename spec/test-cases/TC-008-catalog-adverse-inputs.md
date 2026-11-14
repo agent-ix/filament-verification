@@ -3,9 +3,9 @@ id: TC-008
 title: "Qualify catalog conflicts and inconclusive advice"
 type: TC
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-004"
+  - target: "ix://agent-ix/filament-verification/FR-004"
     type: "verifies"
-  - target: "ix://agent-ix/quire-verification/NFR-003"
+  - target: "ix://agent-ix/filament-verification/NFR-003"
     type: "verifies"
 ---
 # TC-008: Qualify catalog conflicts and inconclusive advice

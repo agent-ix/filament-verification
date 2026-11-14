@@ -3,11 +3,11 @@ id: FR-028
 title: "Accept the E02 cross-repository contract"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/FR-001"
+  - target: "ix://agent-ix/filament-verification/FR-001"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-007"
+  - target: "ix://agent-ix/filament-verification/FR-007"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-verification/FR-016"
+  - target: "ix://agent-ix/filament-verification/FR-016"
     type: "depends_on"
 ---
 # FR-028: Accept the E02 cross-repository contract
@@ -15,7 +15,7 @@ relationships:
 ## Description
 
 The verification compatibility slice SHALL accept
-`quire-verification/e02-draft-2` for private cross-repository Rust consumption, while preserving every required
+`filament-verification/e02-draft-2` for private cross-repository Rust consumption, while preserving every required
 result dimension and every strict-reader refusal.
 
 ## Inputs

@@ -60,7 +60,7 @@ that limit; it does not invent individual-mutant attribution.
 | Delta | Existing owner | Verification-side request |
 |---|---|---|
 | Evidence discharge/inward completeness | quoin #272 | Accept exact scoped result references; preserve live obligation derivation and human dispositions. |
-| Coverage states and clause addresses | quire-contract-ir #58 | Align missing/incomplete/unsupported states and property identity; do not collapse result dimensions. |
+| Coverage states and clause addresses | filament-contract-ir #58 | Align missing/incomplete/unsupported states and property identity; do not collapse result dimensions. |
 | Shared model/source identity | FS02 | Accepted retained packet fixes the opaque identity seam and dependency/binding digest domains for this private consumer. |
 | Version/canonical compatibility | FS05 | Accepted retained packet fixes independent profile/version axes and historical-evidence behavior for this private consumer. |
 

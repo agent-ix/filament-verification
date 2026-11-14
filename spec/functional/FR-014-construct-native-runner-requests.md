@@ -3,15 +3,15 @@ id: FR-014
 title: "Construct exact native runner requests"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-001"
+  - target: "ix://agent-ix/filament-verification/US-001"
     type: implements
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-013"
+  - target: "ix://agent-ix/filament-verification/FR-013"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/FR-015"
+  - target: "ix://agent-ix/filament-verification/FR-015"
     type: depends_on
-  - target: "ix://agent-ix/quire-verification/NFR-006"
+  - target: "ix://agent-ix/filament-verification/NFR-006"
     type: depends_on
 ---
 # FR-014: Construct Exact Native Runner Requests

@@ -142,7 +142,7 @@ impl NativeProcessExecutor {
         let expected_exit_code = validate_expected_exit_code(request.expected_exit_code)?;
         let root_path = descriptor_path(&self.root);
         let run_directory = tempfile::Builder::new()
-            .prefix(".quire-verification-run-")
+            .prefix(".filament-verification-run-")
             .tempdir_in(&root_path)
             .map_err(|error| io_error("create fresh native run directory", &error))?;
         let executable_path = descriptor_path(&self.executable);

@@ -3,15 +3,15 @@ id: FR-031
 title: "Execute linked complete-V1 method plans"
 type: FR
 relationships:
-  - target: "ix://agent-ix/quire-verification/US-005"
+  - target: "ix://agent-ix/filament-verification/US-005"
     type: "implements"
-  - target: "ix://agent-ix/quire-verification/FR-005"
+  - target: "ix://agent-ix/filament-verification/FR-005"
     type: "depends_on"
-  - target: "ix://agent-ix/quire-specification/FR-192"
+  - target: "ix://agent-ix/filament-specification/FR-192"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-332"
+  - target: "ix://agent-ix/filament-specification/FR-332"
     type: "references"
-  - target: "ix://agent-ix/quire-specification/FR-333"
+  - target: "ix://agent-ix/filament-specification/FR-333"
     type: "references"
 ---
 # FR-031: Execute linked complete-V1 method plans
