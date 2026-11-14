@@ -5,7 +5,7 @@
 //!
 //! The retained schemas, their derived `wire_v1`/`wire_v2` types, and the fourteen amendment
 //! fixtures live in public crate
-//! `filament-verification-contracts` (PLAT-861, VER-50), which this crate depends on and
+//! `quire-verification-contracts` (PLAT-861, VER-50), which this crate depends on and
 //! re-exports at `contracts`; this module re-exports them unchanged so every call site below
 //! is unaffected.
 //!

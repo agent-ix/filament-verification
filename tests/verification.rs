@@ -310,7 +310,7 @@ fn tc_003_derives_contract_vocabulary_and_types_from_one_schema() {
     );
     // PLAT-861: the schema-derived wire types and vocabulary constants (build.rs `TypeSpace`
     // codegen against contracts/e02-draft-2.schema.json) now live in public crate
-    // filament-verification-contracts, which this crate re-exports at `contracts`. NFR-002 is
+    // quire-verification-contracts, which this crate re-exports at `contracts`. NFR-002 is
     // "single contract source": this repository's own build.rs must not also derive them, or
     // there would be two sources instead of one.
     let build_script = include_str!("../build.rs");
@@ -1149,7 +1149,7 @@ fn assert_shared_definition_is_external() {
         Some(&json!("urn:ix:shared-reference:2-draft#/$defs/ArtifactRef"))
     );
     // PLAT-861: resolving that external $ref at build time (`type_space.add_ref_types`) is
-    // now filament-verification-contracts's build.rs, not this repository's — this crate no
+    // now quire-verification-contracts's build.rs, not this repository's — this crate no
     // longer derives E02 wire types at all (see tc_003_derives_contract_vocabulary...).
     let build_script = include_str!("../build.rs");
     assert!(!build_script.contains("type_space.add_ref_types"));

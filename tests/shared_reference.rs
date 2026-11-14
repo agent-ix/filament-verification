@@ -4,7 +4,7 @@
 //! Independent acceptance tests for the retained shared-reference packet.
 //!
 //! The retained schemas and fourteen amendment fixtures live in public crate
-//! `filament-verification-contracts` (VER-50); fixture bytes are read through its exported
+//! `quire-verification-contracts` (VER-50); fixture bytes are read through its exported
 //! `contracts::shared_reference::fixtures` constants rather than a local file, since this
 //! crate holds no copy of the packet.
 
