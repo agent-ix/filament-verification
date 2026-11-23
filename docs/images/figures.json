@@ -1,0 +1,54 @@
+{
+  "figures": [
+    {
+      "id": "hero",
+      "width": 980, "height": 330,
+      "label": "Quoin's method catalog and its advice for a requirement supply the techniques that apply. filament-verification combines them with tool capabilities and a selection policy into a verification plan whose tasks are ready, blocked or unsupported. A native producer runs the ready tasks, and the technique results come back to be assessed for scope and freshness. Quoin keeps the evidence and a person decides whether it is enough.",
+      "items": [
+        {"k":"box","at":[0,40,160,56],"role":"code","title":"requirement","subs":["property shape"]},
+        {"k":"box","at":[210,40,160,56],"role":"ink","title":"Quoin advice","subs":["methods that fit"]},
+        {"k":"box","at":[420,40,160,56],"role":"model","title":"technique","subs":["what a method means"]},
+        {"k":"box","at":[630,40,160,56],"role":"model","title":"capability","subs":["a tool that runs it"]},
+        {"k":"box","at":[820,40,160,56],"role":"model","title":"plan","subs":["tasks · gaps"]},
+        {"k":"line","points":[[160,68],[207,68]],"role":"logic"},
+        {"k":"line","points":[[370,68],[417,68]],"role":"logic"},
+        {"k":"line","points":[[580,68],[627,68]],"role":"logic"},
+        {"k":"line","points":[[790,68],[817,68]],"role":"logic"},
+        {"k":"text","at":[210,24],"text":"QUOIN CHOOSES","role":"muted","size":12},
+        {"k":"text","at":[630,24],"text":"FILAMENT-VERIFICATION PLANS","role":"muted","size":12},
+        {"k":"box","at":[630,150,160,56],"role":"ink","title":"policy","subs":["authored priority"]},
+        {"k":"line","points":[[790,178],[805,178],[805,84],[817,84]]},
+        {"k":"box","at":[820,150,160,56],"role":"logic","title":"native run","subs":["bounded request"]},
+        {"k":"line","points":[[900,96],[900,147]],"role":"logic"},
+        {"k":"box","at":[820,250,160,56],"role":"evidence","title":"result","subs":["scope · freshness"]},
+        {"k":"line","points":[[900,206],[900,247]],"role":"evidence"},
+        {"k":"box","at":[420,250,180,56],"role":"logic","title":"assess","subs":["no sufficiency call"]},
+        {"k":"line","points":[[820,278],[603,278]],"role":"evidence"},
+        {"k":"box","at":[0,250,200,56],"role":"evidence","title":"Quoin + a person","subs":["keep evidence · decide"]},
+        {"k":"line","points":[[420,278],[203,278]],"role":"evidence"},
+        {"k":"legend","at":[0,326],"entries":[["code","authored source","box"],["logic","compiler stage","box"],["model","checked package / IR","box"],["evidence","outcome","box"],["ink","input","box"]]}
+      ]
+    },
+    {
+      "id": "task-states",
+      "width": 980, "height": 250,
+      "label": "Every plan task carries two independent answers. Applicability is applicable, not-applicable or unknown; readiness is ready, blocked or unsupported. Only a task that is applicable, ready and qualified, within budget, gets a native runner request.",
+      "items": [
+        {"k":"text","at":[0,14],"text":"APPLICABILITY · DOES THE METHOD FIT","role":"muted","size":12},
+        {"k":"text","at":[520,14],"text":"READINESS · CAN IT RUN NOW","role":"muted","size":12},
+        {"k":"box","at":[0,28,200,48],"role":"logic","title":"applicable","subs":["a rule matched"]},
+        {"k":"box","at":[0,84,200,48],"role":"evidence","title":"unknown","subs":["no rule matched"]},
+        {"k":"box","at":[0,140,200,48],"role":"evidence","title":"not-applicable","subs":["explicitly excluded"]},
+        {"k":"box","at":[520,28,300,48],"role":"logic","title":"ready","subs":["prerequisites met"]},
+        {"k":"box","at":[520,84,300,48],"role":"evidence","title":"blocked","subs":["missing generator, harness, budget"]},
+        {"k":"box","at":[520,140,300,48],"role":"evidence","title":"unsupported","subs":["no qualified capability"]},
+        {"k":"box","at":[260,84,200,48],"role":"model","title":"task","subs":["runner request or null"]},
+        {"k":"line","points":[[200,52],[230,52],[230,108],[257,108]],"role":"logic"},
+        {"k":"line","points":[[460,108],[490,108],[490,52],[517,52]],"role":"logic"},
+        {"k":"legend","at":[0,246],"entries":[["logic","allows a run","box"],["evidence","holds it back","box"],["model","plan task","box"]]}
+      ]
+    },
+    {"id":"ecosystem","construct":{"name":"ecosystem","here":"filament-verification"}}
+  ]
+}
+
