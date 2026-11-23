@@ -1,4 +1,12 @@
 {
+  "data": {
+    "app_applicable": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/applicability/enum/0"},
+    "app_not": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/applicability/enum/1"},
+    "app_unknown": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/applicability/enum/2"},
+    "rd_ready": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/readiness/enum/0"},
+    "rd_blocked": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/readiness/enum/1"},
+    "rd_unsupported": {"from":"json","path":"contracts/e02-draft-2.schema.json","pointer":"/$defs/VerificationPlan/properties/tasks/items/properties/readiness/enum/2"}
+  },
   "figures": [
     {
       "id": "hero",
@@ -32,16 +40,16 @@
     {
       "id": "task-states",
       "width": 980, "height": 250,
-      "label": "Every plan task carries two independent answers. Applicability is applicable, not-applicable or unknown; readiness is ready, blocked or unsupported. Only a task that is applicable, ready and qualified, within budget, gets a native runner request.",
+      "label": "Every plan task carries two independent answers. Applicability is {app_applicable}, {app_not} or {app_unknown}; readiness is {rd_ready}, {rd_blocked} or {rd_unsupported}. Only a task that is {app_applicable}, {rd_ready} and qualified, within budget, gets a native runner request.",
       "items": [
         {"k":"text","at":[0,14],"text":"APPLICABILITY · DOES THE METHOD FIT","role":"muted","size":12},
         {"k":"text","at":[520,14],"text":"READINESS · CAN IT RUN NOW","role":"muted","size":12},
-        {"k":"box","at":[0,28,200,48],"role":"logic","title":"applicable","subs":["a rule matched"]},
-        {"k":"box","at":[0,84,200,48],"role":"evidence","title":"unknown","subs":["no rule matched"]},
-        {"k":"box","at":[0,140,200,48],"role":"evidence","title":"not-applicable","subs":["explicitly excluded"]},
-        {"k":"box","at":[520,28,300,48],"role":"logic","title":"ready","subs":["prerequisites met"]},
-        {"k":"box","at":[520,84,300,48],"role":"evidence","title":"blocked","subs":["missing generator, harness, budget"]},
-        {"k":"box","at":[520,140,300,48],"role":"evidence","title":"unsupported","subs":["no qualified capability"]},
+        {"k":"box","at":[0,28,200,48],"role":"logic","title":"{app_applicable}","subs":["a rule matched"]},
+        {"k":"box","at":[0,84,200,48],"role":"evidence","title":"{app_unknown}","subs":["no rule matched"]},
+        {"k":"box","at":[0,140,200,48],"role":"evidence","title":"{app_not}","subs":["explicitly excluded"]},
+        {"k":"box","at":[520,28,300,48],"role":"logic","title":"{rd_ready}","subs":["prerequisites met"]},
+        {"k":"box","at":[520,84,300,48],"role":"evidence","title":"{rd_blocked}","subs":["missing generator, harness, budget"]},
+        {"k":"box","at":[520,140,300,48],"role":"evidence","title":"{rd_unsupported}","subs":["no qualified capability"]},
         {"k":"box","at":[260,84,200,48],"role":"model","title":"task","subs":["runner request or null"]},
         {"k":"line","points":[[200,52],[230,52],[230,108],[257,108]],"role":"logic"},
         {"k":"line","points":[[460,108],[490,108],[490,52],[517,52]],"role":"logic"},
