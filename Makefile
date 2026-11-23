@@ -1,11 +1,11 @@
-# Documentation figures: docs/images/figures.json is rendered by ixd-figures (agent-ix/ix-diagrams).
-# Install it with: cargo install --git https://github.com/agent-ix/ix-diagrams ixd-figures
+# Documentation figures: docs/images/figures.json is rendered by `ixd build` (agent-ix/ix-diagrams).
+# Install it with: cargo install --git https://github.com/agent-ix/ix-diagrams ix-diagrams
 
-IXD_FIGURES ?= ixd-figures
+IXD ?= ixd
 
 .PHONY: figures figures-check
 figures:
-	$(IXD_FIGURES) generate --definitions docs/images/figures.json
+	$(IXD) build docs/images/figures.json --out docs/images
 
 figures-check:
-	$(IXD_FIGURES) check --definitions docs/images/figures.json
+	$(IXD) build docs/images/figures.json --out docs/images --check
