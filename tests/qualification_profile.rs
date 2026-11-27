@@ -513,7 +513,7 @@ fn tc_039_does_not_infer_a_guarantee_from_commands_or_techniques() {
     let mut command_only = profile();
     command_only["semanticGuarantees"] = json!([]);
     command_only["evidenceRequirements"] = json!([]);
-    assert_ne!(command_only["commands"].as_array().expect("commands").as_slice(), []);
+    assert_ne!(command_only["commands"].as_array().expect("commands").as_slice(), &[] as &[Value]);
     assert!(
         validate_qualification_profile(&command_only, &validated_references(&command_only))
             .is_err()
@@ -526,7 +526,7 @@ fn tc_039_does_not_infer_a_guarantee_from_commands_or_techniques() {
             .as_array()
             .expect("evidence requirements")
             .as_slice(),
-        []
+        &[] as &[Value]
     );
     assert!(
         validate_qualification_profile(
