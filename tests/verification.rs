@@ -1340,7 +1340,7 @@ fn assert_plan_level_setup_tasks(plan: &Value) {
         assert!(setup.get("techniqueId").is_none());
         assert!(setup.get("input").is_none());
         let required_by = setup["requiredBy"].as_array().expect("requiredBy");
-        assert!(!required_by.is_empty());
+        assert_ne!(required_by.as_slice(), &[] as &[Value]);
         assert!(required_by.windows(2).all(|pair| {
             pair[0].as_str().expect("requiredBy identifier")
                 < pair[1].as_str().expect("requiredBy identifier")
@@ -1618,11 +1618,7 @@ fn tc_012_rejects_every_evidence_binding_mismatch() {
     let packet = fixture("results.json");
     let property = &packet["inventory"][0];
     let result = &packet["results"][0];
-    assert!(
-        scope_differences(property, result)
-            .expect("scope comparison")
-            .is_empty()
-    );
+    assert_eq!(scope_differences(property, result).expect("scope comparison"), [] as [&str; 0]);
     let mutations: [ScopeMutation; 14] = [
         ("techniqueId", |v| v["techniqueId"] = json!("other")),
         ("propertyRef", |v| {
